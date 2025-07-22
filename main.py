@@ -1,7 +1,7 @@
 import warnings
 from datetime import datetime
 import os
-import math  # <-- para redondeo hacia arriba
+import math  
 
 # Silenciar warning de urllib3 + LibreSSL antes de importar requests
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
@@ -11,7 +11,7 @@ import requests
 API_KEY = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
 ORIGEN = (36.4835640, -5.0065981)
 DESTINO = (36.5088687, -4.8669464)
-LIMITE_MINUTOS = 20  # umbral
+LIMITE_MINUTOS = 15  
 
 # Secrets (inyectados en GitHub Actions)
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
