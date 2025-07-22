@@ -1,0 +1,33 @@
+name: Verificar tráfico
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # Cada 5 minutos
+  workflow_dispatch:        # También permite ejecución manual
+
+jobs:
+  trafico:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar script de tráfico
+        run: python trafico.py
+
+      - name: Commit de resultados
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add trafico_log.md
+          git commit -m "🔁 Registro tráfico actualizado"
+          git push
