@@ -2,8 +2,9 @@ name: Verificar tráfico
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Cada 5 minutos
-  workflow_dispatch:        # Permite ejecución manual
+    - cron: '*/15 5-7 * * 1-5'   # 07:00–09:45 CEST (UTC+2 => UTC 5–7)
+    - cron: '*/15 13-15 * * 1-5' # 15:00–16:45 CEST (UTC+2 => UTC 13–15)
+  workflow_dispatch:
 
 jobs:
   trafico:
@@ -23,6 +24,9 @@ jobs:
 
       - name: Ejecutar script de tráfico
         run: python main.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
       - name: Configurar permisos para push
         run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
