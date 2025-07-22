@@ -3,7 +3,7 @@ name: Verificar tráfico
 on:
   schedule:
     - cron: '*/5 * * * *'  # Cada 5 minutos
-  workflow_dispatch:        # También permite ejecución manual
+  workflow_dispatch:        # Permite ejecución manual
 
 jobs:
   trafico:
@@ -24,10 +24,15 @@ jobs:
       - name: Ejecutar script de tráfico
         run: python main.py
 
+      - name: Configurar permisos para push
+        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+
       - name: Commit de resultados
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add trafico_log.md
-          git commit -m "🔁 Registro tráfico actualizado"
+          git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
