@@ -1,10 +1,11 @@
-import requests
 import warnings
 from datetime import datetime
 import os
 
-# Silenciar warning de urllib3 + LibreSSL
+# Silenciar warning de urllib3 + LibreSSL antes de importar requests
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
+
+import requests  # <--- ahora sí, después de silenciar warnings
 
 # Configuración
 API_KEY = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
@@ -54,7 +55,9 @@ def enviar_telegram(mensaje, token, chat_id):
         "text": mensaje
     }
     try:
-        requests.post(url, data=payload)
+        response = requests.post(url, data=payload)
+        print(f"✅ Status Telegram: {response.status_code}")
+        print(f"📦 Respuesta Telegram: {response.text}")
     except Exception as e:
         print(f"❌ Error enviando a Telegram: {e}")
 
@@ -72,6 +75,8 @@ try:
                 TELEGRAM_TOKEN,
                 TELEGRAM_CHAT_ID
             )
+        else:
+            print("⚠️ TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no definidos.")
     else:
         print("✅ Trayecto dentro del tiempo permitido.")
 
