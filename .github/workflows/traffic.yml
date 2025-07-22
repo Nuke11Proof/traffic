@@ -2,8 +2,8 @@ name: Verificar tráfico
 
 on:
   schedule:
-    - cron: '*/15 5-7 * * 1-5'   # 07:00–09:45 CEST (UTC+2)
-    - cron: '*/15 13-15 * * 1-5' # 15:00–16:45 CEST (UTC+2)
+    - cron: '*/5 5-8 * * 1-5'    # 07:00–08:55 CEST (cada 5 min)
+    - cron: '*/5 13-15 * * 1-5'  # 15:00–17:55 CEST (cada 5 min)
   workflow_dispatch:
 
 jobs:
