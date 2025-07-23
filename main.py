@@ -103,10 +103,8 @@ if has_toll:
 
 # Enviar siempre
 print(f"📬 Enviando mensaje a Telegram: {texto}")
-if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
-    enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
-else:
-    print("⚠️ TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no definidos.")
+enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
+
 
 registrar_log(minutos, has_toll)
 
