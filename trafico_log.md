@@ -16,6 +16,10 @@
 - 2025-07-23 05:48 | 20 min | 🚨 ALTO | 🚫 Sin peaje
 - 2025-07-23 05:58 | 20 min | 🚨 ALTO | 🚫 Sin peaje
 >>>>>>> 9335fbaca91ce1409dd8d6c63e3aa6a03a0448f3
+<<<<<<< HEAD
 - 2025-07-23 08:06 | 19 min | NORMAL | 🚫 Sin peaje
 - 2025-07-23 08:06 | 19 min | NORMAL | 🚫 Sin peaje
 - 2025-07-23 08:07 | 19 min | NORMAL | 🚫 Sin peaje
+=======
+- 2025-07-23 06:02 | 20 min | NORMAL | 🚫 Sin peaje
+>>>>>>> 9a3167ef1c0595e9ac29a269277a9d8f2f5c2d98
