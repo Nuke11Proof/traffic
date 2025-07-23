@@ -6,3 +6,6 @@
 - 2025-07-22 16:13 | 22 min | 🚨 ALTO | 🚫 Sin peaje
 - 2025-07-22 21:01 | 20 min | ✅ OK | 🚫 Sin peaje
 - 2025-07-22 21:05 | 20 min | ✅ OK | 🚫 Sin peaje
+- 2025-07-22 23:31 | 19 min | 🚨 ALTO | 🚫 Sin peaje
+- 2025-07-23 07:54 | 20 min | NORMAL | 🚫 Sin peaje
+- 2025-07-23 07:55 | 21 min | NORMAL | 🚫 Sin peaje
