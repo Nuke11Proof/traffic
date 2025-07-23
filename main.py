@@ -30,10 +30,8 @@ MIN_NORMAL = 18   # inicio de tráfico normal
 MAX_NORMAL = 25   # fin de tráfico normal
 
 LOG_FILE = os.path.join(BASE_DIR, "trafico_log.md")
-
 # Definir zona CEST (UTC+2)
 CEST = timezone(timedelta(hours=2))
-
 
 def obtener_duracion_tomtom(origen, destino, api_key):
     url = (
@@ -93,11 +91,11 @@ try:
 
     # Construir mensaje según rango
     if minutos < MIN_NORMAL:
-        texto = f"✅ Tráfico muy fluido: llegarás a las {eta}"
+        texto = f"✅ Tráfico muy fluido -> {minutos}min, llegarás a las {eta} :D"
     elif minutos <= MAX_NORMAL:
-        texto = f"🚗 Tráfico normal: llegarás a las {eta}"
+        texto = f"🚗 Tráfico normal -> {minutos}min, llegarás a las {eta} :)"
     else:
-        texto = f"🚨 Tráfico alto: llegarás a las {eta}"
+        texto = f"🚨 Tráfico alto -> {minutos}min, llegarás a las {eta} :/"
 
     # Añadir aviso de peaje
     if has_toll:
