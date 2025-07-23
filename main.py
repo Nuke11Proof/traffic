@@ -64,7 +64,7 @@ def obtener_duracion_tomtom(origen, destino, api_key):
 
 def registrar_log(minutos, has_toll):
     ahora = datetime.now(CEST).strftime('%Y-%m-%d %H:%M')
-    estado_tiempo = "ALTO" if minutos > MAX_NORMAL else "NORMAL"
+    estado_tiempo = "ALTO" if minutos > MAX_NORMAL else "✅ NORMAL"
     estado_peaje  = "⚠️ PEAJE" if has_toll else "🚫 Sin peaje"
     linea = f"- {ahora} | {minutos} min | {estado_tiempo} | {estado_peaje}\n"
     with open(LOG_FILE, "a", encoding="utf-8") as f:
