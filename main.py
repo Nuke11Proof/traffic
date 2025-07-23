@@ -1,10 +1,11 @@
 import warnings
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import os
-import math  
+import math
 from configparser import ConfigParser
 
-# --- Carga de configuración local (solo para dev) ---
+# —————————————————————————————————————————
+# 1. Carga de configuración local (solo para dev)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 cfg = ConfigParser()
 cfg_path = os.path.join(BASE_DIR, "config.ini")
@@ -15,24 +16,23 @@ if os.path.exists(cfg_path):
 else:
     TELEGRAM_TOKEN   = os.getenv("TELEGRAM_TOKEN")
     TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-    
+
 # Silenciar warning de urllib3 + LibreSSL antes de importar requests
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
 import requests
 
-# --- Configuración ---
-API_KEY = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
-ORIGEN = (36.4835640, -5.0065981)
-DESTINO = (36.5088687, -4.8669464)
+# —————————————————————————————————————————
+# 2. Configuración fija
+API_KEY    = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
+ORIGEN     = (36.4835640, -5.0065981)
+DESTINO    = (36.5088687, -4.8669464)
+MIN_NORMAL = 18   # inicio de tráfico normal
+MAX_NORMAL = 25   # fin de tráfico normal
 
-MIN_NORMAL     = 18   # inicio de tráfico normal
-MAX_NORMAL     = 25   # fin de tráfico normal
+LOG_FILE = os.path.join(BASE_DIR, "trafico_log.md")
 
-# Secrets (inyectados por GitHub Actions)
-TELEGRAM_TOKEN   = os.getenv("TELEGRAM_TOKEN")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
-
-LOG_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trafico_log.md")
+# Definir zona CEST (UTC+2)
+CEST = timezone(timedelta(hours=2))
 
 
 def obtener_duracion_tomtom(origen, destino, api_key):
@@ -52,12 +52,10 @@ def obtener_duracion_tomtom(origen, destino, api_key):
     data = r.json()
     if "routes" not in data:
         raise Exception(f"Error en API TomTom: {data}")
-
     summary = data['routes'][0].get('summary', {})
     segundos = summary.get('travelTimeInSeconds')
     if segundos is None:
         raise Exception("Respuesta TomTom sin 'travelTimeInSeconds'.")
-
     has_toll = bool(
         summary.get('hasTollRoad') or
         summary.get('hasTollRoads') or
@@ -67,7 +65,7 @@ def obtener_duracion_tomtom(origen, destino, api_key):
 
 
 def registrar_log(minutos, has_toll):
-    ahora = datetime.now().strftime('%Y-%m-%d %H:%M')
+    ahora = datetime.now(CEST).strftime('%Y-%m-%d %H:%M')
     estado_tiempo = "ALTO" if minutos > MAX_NORMAL else "NORMAL"
     estado_peaje  = "⚠️ PEAJE" if has_toll else "🚫 Sin peaje"
     linea = f"- {ahora} | {minutos} min | {estado_tiempo} | {estado_peaje}\n"
@@ -78,15 +76,10 @@ def registrar_log(minutos, has_toll):
 def enviar_telegram(mensaje, token, chat_id):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
     payload = {"chat_id": chat_id, "text": mensaje}
-    try:
-        resp = requests.post(url, data=payload)
-        print(f"✅ Status Telegram: {resp.status_code}")
-        print(f"📦 Respuesta Telegram: {resp.text}")
-    except Exception as e:
-        print(f"❌ Error enviando a Telegram: {e}")
+    resp = requests.post(url, data=payload)
 
-
-# --- Ejecución principal ---
+# —————————————————————————————————————————
+# 3. Ejecución principal
 try:
     minutos_float, has_toll = obtener_duracion_tomtom(ORIGEN, DESTINO, API_KEY)
     minutos = math.ceil(minutos_float)
@@ -94,8 +87,9 @@ try:
     print(f"⏱️ Duración estimada: {minutos_float:.1f} min (→ {minutos} min redondeado)")
     print("🚫 Ruta sin peaje." if not has_toll else "⚠️ Ruta incluye peaje.")
 
-    # Calcular ETA
-    eta = (datetime.now() + timedelta(minutes=minutos)).strftime('%H:%M')
+    # Calcular ETA en hora local CEST
+    now_local = datetime.now(timezone.utc).astimezone(CEST)
+    eta = (now_local + timedelta(minutes=minutos)).strftime('%H:%M')
 
     # Construir mensaje según rango
     if minutos < MIN_NORMAL:
@@ -109,11 +103,13 @@ try:
     if has_toll:
         texto += "\n⚠️ Ruta con peaje"
 
-    # Enviar mensaje a Telegram
+    # Enviar siempre
     print(f"📬 Enviando mensaje a Telegram: {texto}")
-    enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
-    
-    # Registrar en log
+    if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
+        enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
+    else:
+        print("⚠️ TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no definidos.")
+
     registrar_log(minutos, has_toll)
 
 except Exception as e:
