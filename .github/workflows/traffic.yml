@@ -2,8 +2,8 @@ name: Verificar tráfico
 
 on:
   schedule:
-    - cron: '*/5 5-8 * * 1-5'    # 07:00–08:55 CEST (cada 5 min)
-    - cron: '*/5 13-15 * * 1-5'  # 15:00–17:55 CEST (cada 5 min)
+    - cron: '*/5 5-9 * * 1-5'    # 07:00–10:55 CEST
+    - cron: '*/5 13-16 * * 1-5'  # 15:00–17:55 CEST
   workflow_dispatch:
 
 jobs:
@@ -11,16 +11,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar el repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Configurar Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Instalar dependencias
-        run: pip install requests
+      - run: pip install requests
 
       - name: Ejecutar script de tráfico
         run: python main.py
@@ -28,11 +25,9 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-      - name: Configurar permisos para push
-        run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
 
-      - name: Commit de resultados
-        run: |
+      - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add trafico_log.md

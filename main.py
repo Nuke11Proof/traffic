@@ -78,37 +78,35 @@ def enviar_telegram(mensaje, token, chat_id):
 
 # —————————————————————————————————————————
 # 3. Ejecución principal
-try:
-    minutos_float, has_toll = obtener_duracion_tomtom(ORIGEN, DESTINO, API_KEY)
-    minutos = math.ceil(minutos_float)
 
-    print(f"⏱️ Duración estimada: {minutos_float:.1f} min (→ {minutos} min redondeado)")
-    print("🚫 Ruta sin peaje." if not has_toll else "⚠️ Ruta incluye peaje.")
+minutos_float, has_toll = obtener_duracion_tomtom(ORIGEN, DESTINO, API_KEY)
+minutos = math.ceil(minutos_float)
 
-    # Calcular ETA en hora local CEST
-    now_local = datetime.now(timezone.utc).astimezone(CEST)
-    eta = (now_local + timedelta(minutes=minutos)).strftime('%H:%M')
+print(f"⏱️ Duración estimada: {minutos_float:.1f} min (→ {minutos} min redondeado)")
+print("🚫 Ruta sin peaje." if not has_toll else "⚠️ Ruta incluye peaje.")
 
-    # Construir mensaje según rango
-    if minutos < MIN_NORMAL:
-        texto = f"✅ Tráfico muy fluido -> {minutos}min, llegarás a las {eta} :D"
-    elif minutos <= MAX_NORMAL:
-        texto = f"🚗 Tráfico normal -> {minutos}min, llegarás a las {eta} :)"
-    else:
-        texto = f"🚨 Tráfico alto -> {minutos}min, llegarás a las {eta} :/"
+# Calcular ETA en hora local CEST
+now_local = datetime.now(timezone.utc).astimezone(CEST)
+eta = (now_local + timedelta(minutes=minutos)).strftime('%H:%M')
 
-    # Añadir aviso de peaje
-    if has_toll:
-        texto += "\n⚠️ Ruta con peaje"
+# Construir mensaje según rango
+if minutos < MIN_NORMAL:
+    texto = f"✅ Tráfico muy fluido -> {minutos} min, llegarás a las {eta} :D"
+elif minutos <= MAX_NORMAL:
+    texto = f"🚗 Tráfico normal -> {minutos} min, llegarás a las {eta} :)"
+else:
+    texto = f"🚨 Tráfico alto -> {minutos} min, llegarás a las {eta} :/"
 
-    # Enviar siempre
-    print(f"📬 Enviando mensaje a Telegram: {texto}")
-    if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
-        enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
-    else:
-        print("⚠️ TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no definidos.")
+# Añadir aviso de peaje
+if has_toll:
+    texto += "\n⚠️ Ruta con peaje"
 
-    registrar_log(minutos, has_toll)
+# Enviar siempre
+print(f"📬 Enviando mensaje a Telegram: {texto}")
+if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
+    enviar_telegram(texto, TELEGRAM_TOKEN, TELEGRAM_CHAT_ID)
+else:
+    print("⚠️ TELEGRAM_TOKEN o TELEGRAM_CHAT_ID no definidos.")
 
-except Exception as e:
-    print(f"❌ Error: {e}")
+registrar_log(minutos, has_toll)
+
