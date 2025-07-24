@@ -61,3 +61,4 @@
 - 2025-07-24 16:55 | 29 min | ALTO | 🚫 Sin peaje
 - 2025-07-24 17:28 | 27 min | ALTO | 🚫 Sin peaje
 - 2025-07-24 17:48 | 27 min | ALTO | 🚫 Sin peaje
+- 2025-07-24 18:13 | 29 min | ALTO | 🚫 Sin peaje
