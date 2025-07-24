@@ -16,7 +16,6 @@ else:
 
 # 2) Silenciar warning antes de requests
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
-# (import requests _después_ de filtrar)
 import requests
 
 # 3) Parámetros
