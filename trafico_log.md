@@ -114,3 +114,4 @@
 - 2025-07-29 11:55 | 27 min | ALTO | 🚫 Sin peaje
 - 2025-07-29 15:46 | 34 min | ALTO | 🚫 Sin peaje
 - 2025-07-29 16:12 | 31 min | ALTO | 🚫 Sin peaje
+- 2025-07-29 16:47 | 27 min | ALTO | 🚫 Sin peaje
