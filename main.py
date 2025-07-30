@@ -10,15 +10,15 @@ class TraficoChecker:
     API_KEY    = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
     ORIGEN     = (36.4835640, -5.0065981)
     DESTINO    = (36.5088687, -4.8669464)
-    MIN_NORMAL = 18
+    MIN_NORMAL = 19
     MAX_NORMAL = 25
     LOG_FILE   = "trafico_log.md"
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
-        self.token, self.chat_id = self._load_credentials()        
+        self.token, self.chat_id = self.load_credentials()        
 
-    def _load_credentials(self):
+    def load_credentials(self):
         cfg = ConfigParser()
         if os.path.exists("config.ini"):
             cfg.read("config.ini")
@@ -66,11 +66,11 @@ class TraficoChecker:
         ahora = datetime.now(timezone.utc).astimezone(self.CEST)
         eta = (ahora + timedelta(minutes=minutos)).strftime('%H:%M')
 
-        if minutos < self.MIN_NORMAL:
+        if minutos <= self.MIN_NORMAL:
             texto = f"✅ Tráfico muy fluido ({minutos} min) → ETA {eta}"
-        elif minutos <= self.MAX_NORMAL:
+        elif self.MIN_NORMAL < minutos < self.MAX_NORMAL:
             texto = f"🚗 Tráfico normal ({minutos} min) → ETA {eta}"
-        else:
+        else:  # minutos >= self.MAX_NORMAL
             texto = f"🚨 Tráfico alto ({minutos} min) → ETA {eta}"
 
         if peaje:
