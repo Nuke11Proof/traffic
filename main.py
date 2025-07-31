@@ -24,9 +24,9 @@ class TraficoChecker:
         cfg = ConfigParser()
         if os.path.exists("config.ini"):
             cfg.read("config.ini")
-            return cfg.get("tomtom", "api_key", fallback=os.getenv("TOMTOM_API_KEY"))
+            return cfg.get("tomtom", "api_key", fallback=os.getenv("TOMTOM_TOKEN"))
         else:
-            return os.getenv("TOMTOM_API_KEY")
+            return os.getenv("TOMTOM_TOKEN")
 
     def load_credentials(self):
         # Carga el token y chat_id de Telegram desde config.ini o variables de entorno
