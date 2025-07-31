@@ -57,8 +57,8 @@ class TraficoChecker:
 
         try:
             r = requests.get(url, params=params, timeout=10)
-            print(f"[DEBUG] Status code: {r.status_code}")
-            print(f"[DEBUG] Response: {r.text[:300]}")  # Muestra parte del contenido para diagnóstico
+            #print(f"[DEBUG] Status code: {r.status_code}")
+            #print(f"[DEBUG] Response: {r.text[:300]}")  # Muestra parte del contenido para diagnóstico
 
             r.raise_for_status()  # Lanza error si la respuesta es 4xx/5xx
 
