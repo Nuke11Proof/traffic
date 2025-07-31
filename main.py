@@ -30,27 +30,46 @@ class TraficoChecker:
             token = os.getenv("TELEGRAM_TOKEN")
             chat  = os.getenv("TELEGRAM_CHAT_ID")
         return token, chat
-
+    
+    # Consulta la API de TomTom para obtener la duración y si hay peaje en la ruta
     def obtener_duracion(self):
-        # Consulta la API de TomTom para obtener la duración y si hay peaje en la ruta
         url = (
             f"https://api.tomtom.com/routing/1/calculateRoute/"
             f"{self.ORIGEN[0]},{self.ORIGEN[1]}:{self.DESTINO[0]},{self.DESTINO[1]}/json"
         )
         params = {
-            'key': self.API_KEY, 'traffic': 'true',
-            'travelMode': 'car', 'routeType': 'fastest',
-            'departAt': 'now', 'avoid': 'tollRoads'
+            'key': self.API_KEY,
+            'traffic': 'true',
+            'travelMode': 'car',
+            'routeType': 'fastest',
+            'departAt': 'now',
+            'avoid': 'tollRoads'
         }
-        r = requests.get(url, params=params).json()
-        suma = r['routes'][0]['summary']
-        minutos = suma['travelTimeInSeconds'] / 60
-        peaje = any([
-            suma.get('hasTollRoad'),
-            suma.get('hasTollRoads'),
-            suma.get('hasTollVignette')
-        ])
-        return minutos, peaje
+
+        try:
+            r = requests.get(url, params=params, timeout=10)
+            print(f"[DEBUG] Status code: {r.status_code}")
+            print(f"[DEBUG] Response: {r.text[:300]}")  # Muestra parte del contenido para diagnóstico
+
+            r.raise_for_status()  # Lanza error si la respuesta es 4xx/5xx
+
+            data = r.json()
+
+            summary = data['routes'][0]['summary']
+            minutos = summary['travelTimeInSeconds'] / 60
+            peaje = any([
+                summary.get('hasTollRoad'),
+                summary.get('hasTollRoads'),
+                summary.get('hasTollVignette')
+            ])
+            return minutos, peaje
+
+        except requests.exceptions.RequestException as e:
+            print(f"[ERROR] Fallo en la solicitud HTTP: {e}")
+            raise
+        except (ValueError, KeyError, IndexError) as e:
+            print(f"[ERROR] Respuesta inesperada o malformada: {e}")
+            raise
 
     def send_telegram(self, texto):
         # Envía un mensaje de texto al chat de Telegram configurado
