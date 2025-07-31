@@ -7,7 +7,7 @@ warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.
 import requests
 
 class TraficoChecker:
-    API_KEY    = 'bqFZ78y80RfNCzQAMqOmxPjeX6KutXIW'
+    API_KEY    = '0x0pFDnFElcmVFTb7r8NqJhdCuyyzSaG'
     ORIGEN     = (36.4835640, -5.0065981)
     DESTINO    = (36.5088687, -4.8669464)
     MIN_NORMAL = 19
