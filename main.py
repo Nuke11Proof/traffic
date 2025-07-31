@@ -7,7 +7,6 @@ warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.
 import requests
 
 class TraficoChecker:
-    API_KEY    = '0x0pFDnFElcmVFTb7r8NqJhdCuyyzSaG'
     ORIGEN     = (36.4835640, -5.0065981)
     DESTINO    = (36.5088687, -4.8669464)
     MIN_NORMAL = 19
@@ -16,8 +15,18 @@ class TraficoChecker:
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
-        # Inicializa la clase y carga las credenciales de Telegram
-        self.token, self.chat_id = self.load_credentials()        
+        # Inicializa la clase y carga las credenciales de Telegram y la API KEY
+        self.token, self.chat_id = self.load_credentials()
+        self.api_key = self.load_api_key()
+
+    def load_api_key(self):
+        # Carga la API KEY desde config.ini o variable de entorno
+        cfg = ConfigParser()
+        if os.path.exists("config.ini"):
+            cfg.read("config.ini")
+            return cfg.get("tomtom", "api_key", fallback=os.getenv("TOMTOM_API_KEY"))
+        else:
+            return os.getenv("TOMTOM_API_KEY")
 
     def load_credentials(self):
         # Carga el token y chat_id de Telegram desde config.ini o variables de entorno
@@ -38,7 +47,7 @@ class TraficoChecker:
             f"{self.ORIGEN[0]},{self.ORIGEN[1]}:{self.DESTINO[0]},{self.DESTINO[1]}/json"
         )
         params = {
-            'key': self.API_KEY,
+            'key': self.api_key,
             'traffic': 'true',
             'travelMode': 'car',
             'routeType': 'fastest',
