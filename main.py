@@ -16,9 +16,11 @@ class TraficoChecker:
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
+        # Inicializa la clase y carga las credenciales de Telegram
         self.token, self.chat_id = self.load_credentials()        
 
     def load_credentials(self):
+        # Carga el token y chat_id de Telegram desde config.ini o variables de entorno
         cfg = ConfigParser()
         if os.path.exists("config.ini"):
             cfg.read("config.ini")
@@ -30,6 +32,7 @@ class TraficoChecker:
         return token, chat
 
     def obtener_duracion(self):
+        # Consulta la API de TomTom para obtener la duración y si hay peaje en la ruta
         url = (
             f"https://api.tomtom.com/routing/1/calculateRoute/"
             f"{self.ORIGEN[0]},{self.ORIGEN[1]}:{self.DESTINO[0]},{self.DESTINO[1]}/json"
@@ -50,10 +53,12 @@ class TraficoChecker:
         return minutos, peaje
 
     def send_telegram(self, texto):
+        # Envía un mensaje de texto al chat de Telegram configurado
         url = f"https://api.telegram.org/bot{self.token}/sendMessage"
         requests.post(url, data={"chat_id": self.chat_id, "text": texto})
 
     def log(self, minutos, peaje):
+        # Registra en un archivo el resultado del tráfico consultado
         ahora = datetime.now(self.CEST).strftime('%Y-%m-%d %H:%M')
         nivel = "ALTO" if minutos > self.MAX_NORMAL else "✅ NORMAL"
         toll  = "⚠️ PEAJE" if peaje else "🚫 Sin peaje"
@@ -61,6 +66,7 @@ class TraficoChecker:
             f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll}\n")
 
     def run(self):
+        # Ejecuta el flujo principal: consulta tráfico, genera mensaje, envía y registra
         minutos_float, peaje = self.obtener_duracion()
         minutos = math.ceil(minutos_float)
         ahora = datetime.now(timezone.utc).astimezone(self.CEST)
@@ -81,5 +87,6 @@ class TraficoChecker:
         self.log(minutos, peaje)
 
 if __name__ == "__main__":
+    # Punto de entrada: crea una instancia y ejecuta el chequeo de tráfico
     checker = TraficoChecker()
     checker.run()
