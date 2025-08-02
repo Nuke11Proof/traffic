@@ -2,10 +2,14 @@ name: Verificar tráfico
 
 on:
   schedule:
-    - cron: '*/5 5-9 * * 1-5'    # 07:00–10:55 CEST
-    - cron: '*/5 13-16 * * 1-5'  # 15:00–17:55 CEST
-    - cron: '*/10 6-9 * * 1-5'   # 06:00–09:59 L-V (main_mad.py)
-    - cron: '0,10,20,30 10 * * 1-5' # 10:00, 10:10, 10:20, 10:30 L-V (main_mad.py)
+    # Málaga: 07:00–10:55 CEST (cada 5 min) 
+    - cron: '*/5 5-8 * * 1-5'
+    # Málaga: 15:00–17:55 CEST (cada 5 min) 
+    - cron: '*/5 13-15 * * 1-5'
+    # Madrid: 06:00–08:59 CEST (cada 5 min)
+    - cron: '*/5 4-6 * * 1-5'
+    # Madrid: 15:00–17:59 CEST (cada 5 min)
+    - cron: '*/5 13-15 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -16,11 +20,11 @@ jobs:
 
       - uses: actions/setup-python@v4
         with: 
-            python-version: '3.11'
+          python-version: '3.11'
 
       - run: pip install requests
 
-      - name: Ejecutar main
+      - name: Ejecutar main_mlg
         run: python main_mlg.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -28,9 +32,6 @@ jobs:
           TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
 
       - name: Ejecutar main_mad
-        if: |
-          github.event.schedule == '*/10 6-9 * * 1-5' ||
-          github.event.schedule == '0,10,20,30 10 * * 1-5'
         run: python main_mad.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
@@ -43,7 +44,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add trafico_log_mlg.md trafico_log_mad.md
+          [ -f trafico_log_mlg.md ] && git add trafico_log_mlg.md
+          [ -f trafico_log_mad.md ] && git add trafico_log_mad.md
           git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
           git push origin main
         env:
