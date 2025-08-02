@@ -21,7 +21,7 @@ jobs:
       - run: pip install requests
 
       - name: Ejecutar main
-        run: python main.py
+        run: python main_mlg.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
