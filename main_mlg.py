@@ -6,18 +6,17 @@ from configparser import ConfigParser
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
 import requests
 
-
 # Ejecutar solo hasta el 7 de septiembre incluido
 if datetime.now().date() > datetime(2025, 9, 7).date():
     print("Málaga: fuera de rango de fechas, no se ejecuta.")
     exit(0)
 
 class TraficoChecker:
-    ORIGEN     = (36.4835640, -5.0065981)
-    DESTINO    = (36.5088687, -4.8669464)
+    ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
+    DESTINO    = (36.5088687, -4.8669464) # Policia Local Marbella
     MIN_NORMAL = 19
     MAX_NORMAL = 25
-    LOG_FILE   = "trafico_log_mlg.md"  # Cambiado para perfil _mlg
+    LOG_FILE   = "trafico_log_mlg.md" 
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
