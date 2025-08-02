@@ -43,7 +43,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add trafico_log.md trafico_log_mad.md
+          git add trafico_log_mlg.md trafico_log_mad.md
           git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
           git push origin main
         env:
