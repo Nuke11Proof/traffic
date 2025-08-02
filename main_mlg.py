@@ -11,7 +11,7 @@ class TraficoChecker:
     DESTINO    = (36.5088687, -4.8669464)
     MIN_NORMAL = 19
     MAX_NORMAL = 25
-    LOG_FILE   = "trafico_log.md"
+    LOG_FILE   = "trafico_log_mlg.md"  # Cambiado para perfil _mlg
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
@@ -57,9 +57,6 @@ class TraficoChecker:
 
         try:
             r = requests.get(url, params=params, timeout=10)
-            #print(f"[DEBUG] Status code: {r.status_code}")
-            #print(f"[DEBUG] Response: {r.text[:300]}")  # Muestra parte del contenido para diagnóstico
-
             r.raise_for_status()  # Lanza error si la respuesta es 4xx/5xx
 
             data = r.json()
@@ -104,12 +101,12 @@ class TraficoChecker:
             texto = f"✅ Tráfico muy fluido ({minutos} min) → ETA {eta}"
         elif self.MIN_NORMAL < minutos < self.MAX_NORMAL:
             texto = f"🚗 Tráfico normal ({minutos} min) → ETA {eta}"
-        else:  # minutos >= self.MAX_NORMAL
+        else:  
             texto = f"🚨 Tráfico alto ({minutos} min) → ETA {eta}"
 
         if peaje:
             texto += "\n⚠️ Ruta con peaje"
-
+        
         print(texto)
         self.send_telegram(texto)
         self.log(minutos, peaje)

@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '*/5 5-9 * * 1-5'    # 07:00–10:55 CEST
     - cron: '*/5 13-16 * * 1-5'  # 15:00–17:55 CEST
+    - cron: '*/10 6-9 * * 1-5'   # 06:00–09:59 L-V (main_mad.py)
+    - cron: '0,10,20,30 10 * * 1-5' # 10:00, 10:10, 10:20, 10:30 L-V (main_mad.py)
   workflow_dispatch:
 
 jobs:
@@ -25,6 +27,15 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
 
+      - name: Ejecutar main_mad
+        if: |
+          github.event.schedule == '*/10 6-9 * * 1-5' ||
+          github.event.schedule == '0,10,20,30 10 * * 1-5'
+        run: python main_mad.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
 
       - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       - run: git fetch origin main
@@ -32,7 +43,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add trafico_log.md
+          git add trafico_log.md trafico_log_mad.md
           git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
           git push origin main
         env:
