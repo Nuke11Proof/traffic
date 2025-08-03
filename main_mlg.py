@@ -102,12 +102,14 @@ class TraficoChecker:
         ahora = datetime.now(timezone.utc).astimezone(self.CEST)
         eta = (ahora + timedelta(minutes=minutos)).strftime('%H:%M')
 
+        trayecto = "Hotel Barceló Guadalmina → Policia Local Marbella"
+
         if minutos <= self.MIN_NORMAL:
-            texto = f"✅ Tráfico muy fluido ({minutos} min) → ETA {eta}"
+            texto = f"{trayecto}\n✅ Tráfico muy fluido ({minutos} min) → ETA {eta}"
         elif self.MIN_NORMAL < minutos < self.MAX_NORMAL:
-            texto = f"🚗 Tráfico normal ({minutos} min) → ETA {eta}"
+            texto = f"{trayecto}\n🚗 Tráfico normal ({minutos} min) → ETA {eta}"
         else:  
-            texto = f"🚨 Tráfico alto ({minutos} min) → ETA {eta}"
+            texto = f"{trayecto}\n🚨 Tráfico alto ({minutos} min) → ETA {eta}"
 
         if peaje:
             texto += "\n⚠️ Ruta con peaje"
