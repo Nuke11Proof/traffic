@@ -336,3 +336,4 @@
 - 2025-08-12 15:33 | 33 min | ALTO | 🚫 Sin peaje
 - 2025-08-12 15:52 | 28 min | ALTO | 🚫 Sin peaje
 - 2025-08-12 16:09 | 26 min | ALTO | 🚫 Sin peaje
+- 2025-08-12 16:35 | 26 min | ALTO | 🚫 Sin peaje
