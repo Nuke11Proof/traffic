@@ -333,3 +333,4 @@
 - 2025-08-12 10:22 | 23 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-12 10:45 | 24 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-12 10:59 | 25 min | ✅ NORMAL | 🚫 Sin peaje
+- 2025-08-12 15:33 | 33 min | ALTO | 🚫 Sin peaje
