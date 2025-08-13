@@ -360,3 +360,4 @@
 - 2025-08-13 09:45 | 21 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-13 09:53 | 22 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-13 10:13 | 23 min | ✅ NORMAL | 🚫 Sin peaje
+- 2025-08-13 10:43 | 27 min | ALTO | 🚫 Sin peaje
