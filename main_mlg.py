@@ -6,10 +6,8 @@ from configparser import ConfigParser
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
 import requests
 
-# Ejecutar solo hasta el 7 de septiembre incluido
-if datetime.now().date() > datetime(2025, 9, 7).date():
-    print("Málaga: fuera de rango de fechas, no se ejecuta.")
-    exit(0)
+# Ejecutar solo hasta el 7 de septiembre incluido para enviar Telegram
+ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 9, 7).date()
 
 class TraficoChecker:
     ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
@@ -84,8 +82,9 @@ class TraficoChecker:
 
     def send_telegram(self, texto):
         # Envía un mensaje de texto al chat de Telegram configurado
-        url = f"https://api.telegram.org/bot{self.token}/sendMessage"
-        requests.post(url, data={"chat_id": self.chat_id, "text": texto})
+        if ENVIAR_TELEGRAM:
+            url = f"https://api.telegram.org/bot{self.token}/sendMessage"
+            requests.post(url, data={"chat_id": self.chat_id, "text": texto})
 
     def log(self, minutos, peaje):
         # Registra en un archivo el resultado del tráfico consultado
