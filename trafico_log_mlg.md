@@ -401,3 +401,4 @@
 - 2025-08-14 11:14 | 24 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-14 15:32 | 33 min | ALTO | 🚫 Sin peaje
 - 2025-08-14 15:54 | 32 min | ALTO | 🚫 Sin peaje
+- 2025-08-14 16:13 | 30 min | ALTO | 🚫 Sin peaje
