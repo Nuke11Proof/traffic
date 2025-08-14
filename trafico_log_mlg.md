@@ -403,3 +403,4 @@
 - 2025-08-14 15:54 | 32 min | ALTO | 🚫 Sin peaje
 - 2025-08-14 16:13 | 30 min | ALTO | 🚫 Sin peaje
 - 2025-08-14 16:37 | 27 min | ALTO | 🚫 Sin peaje
+- 2025-08-14 16:52 | 27 min | ALTO | 🚫 Sin peaje
