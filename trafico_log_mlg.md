@@ -379,4 +379,8 @@
 - 2025-08-14 07:37 | 20 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-14 07:41 | 19 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-14 07:49 | 19 min | ✅ NORMAL | 🚫 Sin peaje
+<<<<<<< HEAD
 - 2025-08-14 07:50 | 19 min | ✅ NORMAL | 🚫 Sin peaje
+=======
+- 2025-08-14 07:53 | 19 min | ✅ NORMAL | 🚫 Sin peaje
+>>>>>>> 798700c12908619befeba7e25fd640d70775f766
