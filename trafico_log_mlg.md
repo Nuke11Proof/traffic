@@ -461,3 +461,4 @@
 - 2025-08-18 10:45 | 23 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-18 11:00 | 26 min | ALTO | 🚫 Sin peaje
 - 2025-08-18 15:32 | 24 min | ✅ NORMAL | 🚫 Sin peaje
+- 2025-08-18 15:55 | 24 min | ✅ NORMAL | 🚫 Sin peaje
