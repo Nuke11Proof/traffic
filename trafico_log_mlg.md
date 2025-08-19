@@ -493,3 +493,4 @@
 - 2025-08-19 10:18 | 20 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-19 10:43 | 21 min | ✅ NORMAL | 🚫 Sin peaje
 - 2025-08-19 10:56 | 22 min | ✅ NORMAL | 🚫 Sin peaje
+- 2025-08-19 15:26 | 26 min | ALTO | 🚫 Sin peaje
