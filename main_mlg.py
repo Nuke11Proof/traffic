@@ -6,24 +6,20 @@ from configparser import ConfigParser
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
 import requests
 
-# Ejecutar solo hasta el 7 de septiembre incluido para enviar Telegram
-ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 9, 7).date()
+# Ejecutar solo hasta el 12 de diciembre incluido para enviar Telegram
+ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 12, 31).date()
 
 class TraficoChecker:
     ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
     DESTINO    = (36.5088687, -4.8669464) # Policia Local Marbella
-    MIN_NORMAL = 19
-    MAX_NORMAL = 25
     LOG_FILE   = "trafico_log_mlg.md" 
     CEST       = timezone(timedelta(hours=2))
 
     def __init__(self):
-        # Inicializa la clase y carga las credenciales de Telegram y la API KEY
         self.token, self.chat_id = self.load_credentials()
         self.api_key = self.load_api_key()
 
     def load_api_key(self):
-        # Carga la API KEY desde config.ini o variable de entorno
         cfg = ConfigParser()
         if os.path.exists("config.ini"):
             cfg.read("config.ini")
@@ -32,7 +28,6 @@ class TraficoChecker:
             return os.getenv("TOMTOM_TOKEN")
 
     def load_credentials(self):
-        # Carga el token y chat_id de Telegram desde config.ini o variables de entorno
         cfg = ConfigParser()
         if os.path.exists("config.ini"):
             cfg.read("config.ini")
@@ -43,7 +38,6 @@ class TraficoChecker:
             chat  = os.getenv("TELEGRAM_CHAT_ID")
         return token, chat
     
-    # Consulta la API de TomTom para obtener la duración y si hay peaje en la ruta
     def obtener_duracion(self):
         url = (
             f"https://api.tomtom.com/routing/1/calculateRoute/"
@@ -60,10 +54,8 @@ class TraficoChecker:
 
         try:
             r = requests.get(url, params=params, timeout=10)
-            r.raise_for_status()  # Lanza error si la respuesta es 4xx/5xx
-
+            r.raise_for_status()
             data = r.json()
-
             summary = data['routes'][0]['summary']
             minutos = summary['travelTimeInSeconds'] / 60
             peaje = any([
@@ -81,35 +73,76 @@ class TraficoChecker:
             raise
 
     def send_telegram(self, texto):
-        # Envía un mensaje de texto al chat de Telegram configurado
         if ENVIAR_TELEGRAM:
             url = f"https://api.telegram.org/bot{self.token}/sendMessage"
             requests.post(url, data={"chat_id": self.chat_id, "text": texto})
 
     def log(self, minutos, peaje):
-        # Registra en un archivo el resultado del tráfico consultado
         ahora = datetime.now(self.CEST).strftime('%Y-%m-%d %H:%M')
-        nivel = "ALTO" if minutos > self.MAX_NORMAL else "✅ NORMAL"
+        nivel = "AUTO"
         toll  = "⚠️ PEAJE" if peaje else "🚫 Sin peaje"
         with open(self.LOG_FILE, "a", encoding="utf-8") as f:
             f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll}\n")
 
+    def media_historica_dia(self):
+        """Devuelve la media histórica de minutos para el día de la semana."""
+        if not os.path.exists(self.LOG_FILE):
+            return None
+        from datetime import datetime
+        minutos = []
+        hoy = datetime.now(self.CEST)
+        dia_semana = hoy.strftime("%A")
+        with open(self.LOG_FILE, encoding="utf-8") as f:
+            for linea in f:
+                # - 2025-08-04 06:58 | 26 min | ... | ... 
+                parts = linea.strip().split("|")
+                if len(parts) < 2:
+                    continue
+                fecha_str = parts[0].replace("-", "").strip()[1:].strip()
+                try:
+                    fecha = datetime.strptime(fecha_str, "%Y%m%d %H:%M")
+                except Exception:
+                    continue
+                if fecha.strftime("%A") == dia_semana:
+                    try:
+                        min_val = int(parts[1].strip().split(" ")[0])
+                        minutos.append(min_val)
+                    except Exception:
+                        continue
+        if minutos:
+            return sum(minutos) / len(minutos)
+        else:
+            return None
+
+    def clasifica_trafico(self, minutos, media):
+        """Clasifica el tráfico según la media histórica del día."""
+        if media is None:
+            # Si no hay histórico, usa valores fijos razonables
+            if minutos <= 19:
+                return "✅ Tráfico muy fluido"
+            elif minutos < 25:
+                return "🚗 Tráfico normal"
+            else:
+                return "🚨 Tráfico alto"
+        # Umbrales relativos a la media histórica
+        if minutos <= media:
+            return "✅ Tráfico muy fluido"
+        elif minutos <= media + 5:
+            return "🚗 Tráfico normal"
+        else:
+            return "🚨 Tráfico alto"
+
     def run(self):
-        # Ejecuta el flujo principal: consulta tráfico, genera mensaje, envía y registra
         minutos_float, peaje = self.obtener_duracion()
         minutos = math.ceil(minutos_float)
         ahora = datetime.now(timezone.utc).astimezone(self.CEST)
         eta = (ahora + timedelta(minutes=minutos)).strftime('%H:%M')
 
+        media = self.media_historica_dia()
+        clasificacion = self.clasifica_trafico(minutos, media)
+
         trayecto = "Hotel Barceló Guadalmina → Policia Local Marbella"
-
-        if minutos <= self.MIN_NORMAL:
-            texto = f"{trayecto}\n✅ Tráfico muy fluido ({minutos} min) → ETA {eta}"
-        elif self.MIN_NORMAL < minutos < self.MAX_NORMAL:
-            texto = f"{trayecto}\n🚗 Tráfico normal ({minutos} min) → ETA {eta}"
-        else:  
-            texto = f"{trayecto}\n🚨 Tráfico alto ({minutos} min) → ETA {eta}"
-
+        texto = f"{trayecto}\n{clasificacion} ({minutos} min) → ETA {eta}"
         if peaje:
             texto += "\n⚠️ Ruta con peaje"
         
@@ -118,6 +151,5 @@ class TraficoChecker:
         self.log(minutos, peaje)
 
 if __name__ == "__main__":
-    # Punto de entrada: crea una instancia y ejecuta el chequeo de tráfico
     checker = TraficoChecker()
     checker.run()
