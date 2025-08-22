@@ -591,3 +591,4 @@
 - 2025-08-22 09:10 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-08-22 09:27 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-08-22 09:38 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-08-22 09:46 | 19 min | AUTO | 🚫 Sin peaje
