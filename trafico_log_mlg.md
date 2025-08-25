@@ -639,3 +639,4 @@
 - 2025-08-25 16:38 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-08-25 16:50 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-08-25 16:58 | 23 min | AUTO | 🚫 Sin peaje
+- 2025-08-25 17:24 | 23 min | AUTO | 🚫 Sin peaje
