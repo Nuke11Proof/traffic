@@ -711,3 +711,4 @@
 - 2025-08-27 15:51 | 28 min | AUTO | 🚫 Sin peaje
 - 2025-08-27 15:59 | 27 min | AUTO | 🚫 Sin peaje
 - 2025-08-27 16:24 | 26 min | AUTO | 🚫 Sin peaje
+- 2025-08-27 16:40 | 25 min | AUTO | 🚫 Sin peaje
