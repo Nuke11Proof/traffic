@@ -733,3 +733,4 @@
 - 2025-08-28 08:33 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-08-28 08:38 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-08-28 08:52 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-08-28 08:54 | 20 min | AUTO | 🚫 Sin peaje
