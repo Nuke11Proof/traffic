@@ -803,3 +803,4 @@
 - 2025-09-01 07:29 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-09-01 07:33 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-09-01 07:44 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-09-01 07:52 | 20 min | AUTO | 🚫 Sin peaje
