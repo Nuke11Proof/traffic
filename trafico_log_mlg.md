@@ -945,3 +945,4 @@
 - 2025-09-04 15:57 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-09-04 16:18 | 29 min | AUTO | 🚫 Sin peaje
 - 2025-09-04 16:37 | 31 min | AUTO | 🚫 Sin peaje
+- 2025-09-04 16:47 | 31 min | AUTO | 🚫 Sin peaje
