@@ -1077,3 +1077,4 @@
 - 2025-09-10 06:50 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-09-10 07:09 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-09-10 07:12 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-09-10 07:30 | 19 min | AUTO | 🚫 Sin peaje
