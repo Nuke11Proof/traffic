@@ -1201,3 +1201,4 @@
 - 2025-09-15 07:13 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-09-15 07:16 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-09-15 07:32 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-09-15 07:36 | 19 min | AUTO | 🚫 Sin peaje
