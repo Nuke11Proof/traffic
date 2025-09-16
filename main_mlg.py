@@ -7,7 +7,8 @@ warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.
 import requests
 
 # Ejecutar solo hasta el 12 de diciembre incluido para enviar Telegram
-ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 12, 31).date()
+#ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 12, 31).date()
+ENVIAR_TELEGRAM = True
 
 class TraficoChecker:
     ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
