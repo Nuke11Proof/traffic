@@ -1525,3 +1525,4 @@
 - 2025-09-25 08:51 | 26 min | AUTO | 🚫 Sin peaje
 - 2025-09-25 08:52 | 27 min | AUTO | 🚫 Sin peaje
 - 2025-09-25 08:58 | 27 min | AUTO | 🚫 Sin peaje
+- 2025-09-25 09:14 | 24 min | AUTO | 🚫 Sin peaje
