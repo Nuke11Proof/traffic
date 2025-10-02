@@ -1702,4 +1702,8 @@
 - 2025-10-02 06:23 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-02 06:40 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-02 06:51 | 17 min | AUTO | 🚫 Sin peaje
+<<<<<<< Updated upstream
 - 2025-10-02 07:11 | 18 min | AUTO | 🚫 Sin peaje
+=======
+- 2025-10-02 07:12 | 18 min | AUTO | 🚫 Sin peaje
+>>>>>>> Stashed changes
