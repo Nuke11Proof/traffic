@@ -1763,3 +1763,4 @@
 - 2025-10-03 08:58 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-10-03 09:11 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-03 09:26 | 25 min | AUTO | 🚫 Sin peaje
+- 2025-10-03 09:36 | 26 min | AUTO | 🚫 Sin peaje
