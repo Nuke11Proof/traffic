@@ -1933,3 +1933,4 @@
 - 2025-10-09 16:13 | 27 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 16:34 | 31 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 17:07 | 27 min | AUTO | 🚫 Sin peaje
+- 2025-10-09 17:22 | 26 min | AUTO | 🚫 Sin peaje
