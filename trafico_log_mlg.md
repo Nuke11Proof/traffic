@@ -1935,3 +1935,4 @@
 - 2025-10-09 17:07 | 27 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 17:22 | 26 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 17:27 | 26 min | AUTO | 🚫 Sin peaje
+- 2025-10-09 17:44 | 26 min | AUTO | 🚫 Sin peaje
