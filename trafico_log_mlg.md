@@ -1930,3 +1930,4 @@
 - 2025-10-09 15:26 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 15:45 | 26 min | AUTO | 🚫 Sin peaje
 - 2025-10-09 15:54 | 26 min | AUTO | 🚫 Sin peaje
+- 2025-10-09 16:13 | 27 min | AUTO | 🚫 Sin peaje
