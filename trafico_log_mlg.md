@@ -1964,3 +1964,4 @@
 - 2025-10-10 10:40 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 10:53 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 11:01 | 23 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 15:23 | 28 min | AUTO | 🚫 Sin peaje
