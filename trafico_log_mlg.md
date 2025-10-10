@@ -1970,3 +1970,4 @@
 - 2025-10-10 15:58 | 29 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 16:21 | 32 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 16:38 | 29 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 16:48 | 29 min | AUTO | 🚫 Sin peaje
