@@ -1962,3 +1962,4 @@
 - 2025-10-10 09:55 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 10:17 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 10:40 | 23 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 10:53 | 23 min | AUTO | 🚫 Sin peaje
