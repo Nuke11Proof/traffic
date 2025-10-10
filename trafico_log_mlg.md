@@ -1959,3 +1959,4 @@
 - 2025-10-10 09:30 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 09:40 | 28 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 09:47 | 25 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 09:55 | 24 min | AUTO | 🚫 Sin peaje
