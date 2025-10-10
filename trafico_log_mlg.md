@@ -1944,3 +1944,4 @@
 - 2025-10-10 07:15 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 07:31 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 07:34 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 07:42 | 20 min | AUTO | 🚫 Sin peaje
