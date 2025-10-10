@@ -1976,3 +1976,4 @@
 - 2025-10-10 17:32 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 17:42 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 17:51 | 23 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 18:00 | 23 min | AUTO | 🚫 Sin peaje
