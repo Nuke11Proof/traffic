@@ -1954,3 +1954,4 @@
 - 2025-10-10 08:50 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 08:53 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 08:57 | 24 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 09:16 | 25 min | AUTO | 🚫 Sin peaje
