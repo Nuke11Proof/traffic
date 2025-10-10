@@ -1946,3 +1946,4 @@
 - 2025-10-10 07:34 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 07:42 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 07:45 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 07:50 | 21 min | AUTO | 🚫 Sin peaje
