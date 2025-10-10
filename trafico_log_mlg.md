@@ -1973,3 +1973,4 @@
 - 2025-10-10 16:48 | 29 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 16:57 | 29 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 17:18 | 25 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 17:32 | 24 min | AUTO | 🚫 Sin peaje
