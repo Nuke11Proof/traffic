@@ -1941,3 +1941,4 @@
 - 2025-10-10 06:41 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 06:53 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-10 07:12 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-10-10 07:15 | 17 min | AUTO | 🚫 Sin peaje
