@@ -2010,3 +2010,4 @@
 - 2025-10-13 16:56 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 17:17 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 17:33 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 17:44 | 19 min | AUTO | 🚫 Sin peaje
