@@ -1979,3 +1979,4 @@
 - 2025-10-10 18:00 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 06:24 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 06:43 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 06:54 | 17 min | AUTO | 🚫 Sin peaje
