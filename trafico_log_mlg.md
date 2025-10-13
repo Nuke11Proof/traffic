@@ -2006,3 +2006,4 @@
 - 2025-10-13 15:55 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 16:14 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 16:35 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 16:47 | 19 min | AUTO | 🚫 Sin peaje
