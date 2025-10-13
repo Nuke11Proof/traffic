@@ -1985,3 +1985,4 @@
 - 2025-10-13 07:32 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 07:38 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 07:44 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 07:49 | 18 min | AUTO | 🚫 Sin peaje
