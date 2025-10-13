@@ -1989,3 +1989,4 @@
 - 2025-10-13 07:51 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 07:59 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 08:00 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 08:34 | 18 min | AUTO | 🚫 Sin peaje
