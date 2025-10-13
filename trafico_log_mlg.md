@@ -1997,3 +1997,4 @@
 - 2025-10-13 09:29 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 09:40 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 09:48 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 09:56 | 19 min | AUTO | 🚫 Sin peaje
