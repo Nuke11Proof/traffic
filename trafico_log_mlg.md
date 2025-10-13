@@ -1992,3 +1992,4 @@
 - 2025-10-13 08:34 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 08:41 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 08:53 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 08:56 | 18 min | AUTO | 🚫 Sin peaje
