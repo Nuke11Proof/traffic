@@ -2001,3 +2001,4 @@
 - 2025-10-13 10:21 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 10:44 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-13 10:57 | 19 min | AUTO | 🚫 Sin peaje
+- 2025-10-13 15:25 | 18 min | AUTO | 🚫 Sin peaje
