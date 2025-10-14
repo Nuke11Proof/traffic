@@ -2040,3 +2040,4 @@
 - 2025-10-14 10:40 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-14 10:53 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-14 11:01 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-10-14 15:26 | 25 min | AUTO | 🚫 Sin peaje
