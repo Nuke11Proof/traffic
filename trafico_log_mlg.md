@@ -2016,3 +2016,4 @@
 - 2025-10-14 06:24 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-14 06:42 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-10-14 06:53 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-10-14 07:13 | 18 min | AUTO | 🚫 Sin peaje
