@@ -2213,3 +2213,4 @@
 - 2025-10-21 07:51 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-21 07:58 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-10-21 08:31 | 21 min | AUTO | 🚫 Sin peaje
+- 2025-10-21 08:38 | 23 min | AUTO | 🚫 Sin peaje
