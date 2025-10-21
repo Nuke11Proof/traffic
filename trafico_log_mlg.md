@@ -2211,3 +2211,4 @@
 - 2025-10-21 07:43 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-21 07:47 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-21 07:51 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-10-21 07:58 | 19 min | AUTO | 🚫 Sin peaje
