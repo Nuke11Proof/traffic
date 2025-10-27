@@ -6,6 +6,12 @@ from configparser import ConfigParser
 warnings.filterwarnings("ignore", message="urllib3 v2 only supports OpenSSL 1.1.1+")
 import requests
 
+# Prefer zoneinfo (py3.9+). If no zoneinfo, try pytz. If neither, fall back to fixed CET offset.
+try:
+    from zoneinfo import ZoneInfo as _ZoneInfo
+except Exception:
+    _ZoneInfo = None
+
 # Ejecutar solo hasta el 12 de diciembre incluido para enviar Telegram
 #ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 12, 31).date()
 ENVIAR_TELEGRAM = True
@@ -14,7 +20,16 @@ class TraficoChecker:
     ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
     DESTINO    = (36.5088687, -4.8669464) # Policia Local Marbella
     LOG_FILE   = "trafico_log_mlg.md" 
-    CEST       = timezone(timedelta(hours=2))
+    # timezone-aware object for Europe/Madrid that handles DST transitions
+    if _ZoneInfo:
+        CEST = _ZoneInfo("Europe/Madrid")
+    else:
+        try:
+            import pytz as _pytz
+            CEST = _pytz.timezone("Europe/Madrid")
+        except Exception:
+            # Last resort: fixed CET offset (UTC+1). This will NOT handle DST.
+            CEST = timezone(timedelta(hours=1))
 
     def __init__(self):
         self.token, self.chat_id = self.load_credentials()
@@ -102,6 +117,11 @@ class TraficoChecker:
                 fecha_str = parts[0].replace("-", "").strip()[1:].strip()
                 try:
                     fecha = datetime.strptime(fecha_str, "%Y%m%d %H:%M")
+                    # attach timezone so weekday comparisons respect DST rules
+                    if hasattr(self.CEST, 'localize'):
+                        fecha = self.CEST.localize(fecha)
+                    else:
+                        fecha = fecha.replace(tzinfo=self.CEST)
                 except Exception:
                     continue
                 if fecha.strftime("%A") == dia_semana:
