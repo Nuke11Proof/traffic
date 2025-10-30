@@ -2411,3 +2411,4 @@
 - 2025-10-30 08:43 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-30 08:47 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-10-30 08:49 | 24 min | AUTO | 🚫 Sin peaje
+- 2025-10-30 08:55 | 22 min | AUTO | 🚫 Sin peaje
