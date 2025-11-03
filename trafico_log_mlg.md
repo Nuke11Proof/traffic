@@ -2465,3 +2465,4 @@
 - 2025-10-31 18:13 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-11-03 06:10 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-11-03 06:32 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-11-03 06:44 | 18 min | AUTO | 🚫 Sin peaje
