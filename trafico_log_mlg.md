@@ -2591,3 +2591,4 @@
 - 2025-11-06 15:53 | 28 min | AUTO | 🚫 Sin peaje
 - 2025-11-06 16:19 | 32 min | AUTO | 🚫 Sin peaje
 - 2025-11-06 16:41 | 33 min | AUTO | 🚫 Sin peaje
+- 2025-11-06 16:54 | 34 min | AUTO | 🚫 Sin peaje
