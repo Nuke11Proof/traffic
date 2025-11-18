@@ -2839,3 +2839,4 @@
 - 2025-11-18 07:35 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-11-18 07:46 | 19 min | AUTO | 🚫 Sin peaje
 - 2025-11-18 07:54 | 21 min | AUTO | 🚫 Sin peaje
+- 2025-11-18 07:56 | 21 min | AUTO | 🚫 Sin peaje
