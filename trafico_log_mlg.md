@@ -2860,3 +2860,4 @@
 - 2025-11-18 11:19 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-11-18 15:21 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-11-18 15:42 | 21 min | AUTO | 🚫 Sin peaje
+- 2025-11-18 15:55 | 21 min | AUTO | 🚫 Sin peaje
