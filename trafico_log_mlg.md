@@ -3017,3 +3017,4 @@
 - 2025-11-25 08:32 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-11-25 08:42 | 21 min | AUTO | 🚫 Sin peaje
 - 2025-11-25 08:43 | 21 min | AUTO | 🚫 Sin peaje
+- 2025-11-25 08:48 | 20 min | AUTO | 🚫 Sin peaje
