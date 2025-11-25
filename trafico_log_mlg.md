@@ -3028,3 +3028,4 @@
 - 2025-11-25 11:01 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-11-25 15:22 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-11-25 15:44 | 21 min | AUTO | 🚫 Sin peaje
+- 2025-11-25 15:55 | 21 min | AUTO | 🚫 Sin peaje
