@@ -3072,3 +3072,4 @@
 - 2025-11-27 06:45 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-11-27 06:52 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-11-27 06:57 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-11-27 07:24 | 19 min | AUTO | 🚫 Sin peaje
