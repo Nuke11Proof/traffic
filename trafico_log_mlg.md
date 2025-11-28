@@ -3111,3 +3111,4 @@
 - 2025-11-28 08:18 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-11-28 08:27 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-11-28 08:32 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-11-28 08:41 | 21 min | AUTO | 🚫 Sin peaje
