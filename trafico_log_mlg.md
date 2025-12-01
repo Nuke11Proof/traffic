@@ -3133,3 +3133,4 @@
 - 2025-11-28 17:50 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-11-28 18:10 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-12-01 06:18 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-12-01 06:44 | 18 min | AUTO | 🚫 Sin peaje
