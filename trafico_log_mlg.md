@@ -3219,3 +3219,4 @@
 - 2025-12-03 16:51 | 33 min | AUTO | 🚫 Sin peaje
 - 2025-12-03 17:17 | 35 min | AUTO | 🚫 Sin peaje
 - 2025-12-03 17:49 | 32 min | AUTO | 🚫 Sin peaje
+- 2025-12-03 18:13 | 29 min | AUTO | 🚫 Sin peaje
