@@ -3210,3 +3210,4 @@
 - 2025-12-03 09:40 | 23 min | AUTO | 🚫 Sin peaje
 - 2025-12-03 10:00 | 22 min | AUTO | 🚫 Sin peaje
 - 2025-12-03 10:34 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-12-03 10:51 | 20 min | AUTO | 🚫 Sin peaje
