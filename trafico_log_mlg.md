@@ -3353,3 +3353,4 @@
 - 2025-12-10 08:16 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-12-10 08:32 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-12-10 08:35 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-12-10 08:46 | 22 min | AUTO | 🚫 Sin peaje
