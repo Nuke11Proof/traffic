@@ -3399,3 +3399,4 @@
 - 2025-12-11 17:28 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-12-11 17:59 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-12-12 06:11 | 17 min | AUTO | 🚫 Sin peaje
+- 2025-12-12 06:35 | 18 min | AUTO | 🚫 Sin peaje
