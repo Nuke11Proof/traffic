@@ -3532,3 +3532,4 @@
 - 2025-12-18 10:37 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-12-18 10:55 | 20 min | AUTO | 🚫 Sin peaje
 - 2025-12-18 15:25 | 20 min | AUTO | 🚫 Sin peaje
+- 2025-12-18 15:49 | 25 min | AUTO | 🚫 Sin peaje
