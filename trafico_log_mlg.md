@@ -3625,3 +3625,4 @@
 - 2025-12-23 16:47 | 28 min | AUTO | 🚫 Sin peaje
 - 2025-12-23 16:59 | 31 min | AUTO | 🚫 Sin peaje
 - 2025-12-23 17:38 | 29 min | AUTO | 🚫 Sin peaje
+- 2025-12-23 17:57 | 29 min | AUTO | 🚫 Sin peaje
