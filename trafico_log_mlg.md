@@ -3662,3 +3662,4 @@
 - 2025-12-25 07:24 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-12-25 07:39 | 18 min | AUTO | 🚫 Sin peaje
 - 2025-12-25 07:51 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-12-25 08:01 | 19 min | AUTO | 🚫 Sin peaje
