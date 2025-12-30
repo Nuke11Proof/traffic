@@ -3741,3 +3741,4 @@
 - 2025-12-29 17:58 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-12-30 06:14 | 17 min | AUTO | 🚫 Sin peaje
 - 2025-12-30 06:39 | 18 min | AUTO | 🚫 Sin peaje
+- 2025-12-30 06:51 | 18 min | AUTO | 🚫 Sin peaje
