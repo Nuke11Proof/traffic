@@ -3739,3 +3739,4 @@
 - 2025-12-29 17:11 | 25 min | AUTO | 🚫 Sin peaje
 - 2025-12-29 17:43 | 24 min | AUTO | 🚫 Sin peaje
 - 2025-12-29 17:58 | 24 min | AUTO | 🚫 Sin peaje
+- 2025-12-30 06:14 | 17 min | AUTO | 🚫 Sin peaje
