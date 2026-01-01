@@ -3800,3 +3800,4 @@
 - 2025-12-31 17:59 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-01-01 06:18 | 17 min | AUTO | 🚫 Sin peaje
 - 2026-01-01 06:45 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-01-01 06:55 | 18 min | AUTO | 🚫 Sin peaje
