@@ -3809,3 +3809,4 @@
 - 2026-01-01 08:28 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-01-01 08:32 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-01-01 08:42 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-01-01 08:47 | 19 min | AUTO | 🚫 Sin peaje
