@@ -3830,3 +3830,4 @@
 - 2026-01-02 06:15 | 17 min | AUTO | 🚫 Sin peaje
 - 2026-01-02 06:42 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-02 06:54 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-01-02 06:59 | 18 min | AUTO | 🚫 Sin peaje
