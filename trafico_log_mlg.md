@@ -3851,3 +3851,4 @@
 - 2026-01-02 15:43 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-02 15:56 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-02 16:28 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-01-02 16:46 | 23 min | AUTO | 🚫 Sin peaje
