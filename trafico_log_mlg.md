@@ -3891,3 +3891,4 @@
 - 2026-01-06 08:52 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-01-06 08:52 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-01-06 08:58 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-01-06 09:27 | 19 min | AUTO | 🚫 Sin peaje
