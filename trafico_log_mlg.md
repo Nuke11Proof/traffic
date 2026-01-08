@@ -3945,3 +3945,4 @@
 - 2026-01-08 09:52 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-01-08 10:27 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-08 10:52 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-01-08 11:20 | 20 min | AUTO | 🚫 Sin peaje
