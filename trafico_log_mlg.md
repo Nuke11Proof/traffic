@@ -3929,3 +3929,4 @@
 - 2026-01-07 17:43 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-01-07 18:12 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-01-08 06:15 | 17 min | AUTO | 🚫 Sin peaje
+- 2026-01-08 06:42 | 18 min | AUTO | 🚫 Sin peaje
