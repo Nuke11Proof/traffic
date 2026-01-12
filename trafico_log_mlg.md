@@ -3981,3 +3981,4 @@
 - 2026-01-12 06:47 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-12 06:59 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-12 07:35 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-01-12 07:45 | 20 min | AUTO | 🚫 Sin peaje
