@@ -4012,3 +4012,4 @@
 - 2026-01-13 08:35 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-01-13 08:40 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-01-13 08:50 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-01-13 08:51 | 25 min | AUTO | 🚫 Sin peaje
