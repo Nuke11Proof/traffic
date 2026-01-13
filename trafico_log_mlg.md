@@ -4009,3 +4009,4 @@
 - 2026-01-13 07:57 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-01-13 08:03 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-01-13 08:20 | 23 min | AUTO | 🚫 Sin peaje
+- 2026-01-13 08:35 | 25 min | AUTO | 🚫 Sin peaje
