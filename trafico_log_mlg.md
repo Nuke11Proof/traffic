@@ -4031,3 +4031,4 @@
 - 2026-01-14 06:53 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 06:59 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 07:31 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 07:41 | 19 min | AUTO | 🚫 Sin peaje
