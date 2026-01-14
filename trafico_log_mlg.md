@@ -4035,3 +4035,4 @@
 - 2026-01-14 07:57 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 08:03 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 08:20 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 08:35 | 22 min | AUTO | 🚫 Sin peaje
