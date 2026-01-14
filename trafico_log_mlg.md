@@ -4042,3 +4042,4 @@
 - 2026-01-14 09:24 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 09:55 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 10:34 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 10:55 | 23 min | AUTO | 🚫 Sin peaje
