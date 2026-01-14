@@ -4045,3 +4045,4 @@
 - 2026-01-14 10:55 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 15:27 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 15:53 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 16:25 | 32 min | AUTO | 🚫 Sin peaje
