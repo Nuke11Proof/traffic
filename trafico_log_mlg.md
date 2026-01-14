@@ -4029,3 +4029,4 @@
 - 2026-01-14 06:14 | 17 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 06:42 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 06:53 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 06:59 | 18 min | AUTO | 🚫 Sin peaje
