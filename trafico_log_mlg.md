@@ -4048,3 +4048,4 @@
 - 2026-01-14 16:25 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 16:46 | 30 min | AUTO | 🚫 Sin peaje
 - 2026-01-14 16:59 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-01-14 17:44 | 23 min | AUTO | 🚫 Sin peaje
