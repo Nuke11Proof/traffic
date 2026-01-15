@@ -4061,3 +4061,4 @@
 - 2026-01-15 08:23 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 08:35 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 08:41 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-01-15 08:51 | 23 min | AUTO | 🚫 Sin peaje
