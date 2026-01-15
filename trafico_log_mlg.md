@@ -4075,3 +4075,4 @@
 - 2026-01-15 15:27 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 15:52 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 16:20 | 30 min | AUTO | 🚫 Sin peaje
+- 2026-01-15 16:49 | 29 min | AUTO | 🚫 Sin peaje
