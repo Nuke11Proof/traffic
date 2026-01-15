@@ -4069,3 +4069,4 @@
 - 2026-01-15 08:57 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 09:25 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-01-15 09:55 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-01-15 10:33 | 20 min | AUTO | 🚫 Sin peaje
