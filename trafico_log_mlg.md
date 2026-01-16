@@ -4095,3 +4095,4 @@
 - 2026-01-16 09:21 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-01-16 09:51 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-01-16 10:22 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-01-16 10:48 | 20 min | AUTO | 🚫 Sin peaje
