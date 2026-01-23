@@ -4207,3 +4207,4 @@
 - 2026-01-23 08:51 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-01-23 08:55 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-01-23 09:25 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-01-23 09:56 | 23 min | AUTO | 🚫 Sin peaje
