@@ -4218,3 +4218,4 @@
 - 2026-01-23 17:51 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-01-23 18:20 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-01-26 06:24 | 17 min | AUTO | 🚫 Sin peaje
+- 2026-01-26 06:50 | 18 min | AUTO | 🚫 Sin peaje
