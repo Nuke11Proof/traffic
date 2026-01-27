@@ -4250,3 +4250,4 @@
 - 2026-01-27 08:44 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-27 08:54 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-01-27 08:58 | 23 min | AUTO | 🚫 Sin peaje
+- 2026-01-27 09:00 | 23 min | AUTO | 🚫 Sin peaje
