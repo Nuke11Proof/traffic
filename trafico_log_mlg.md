@@ -4308,3 +4308,4 @@
 - 2026-01-30 10:53 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-30 11:35 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-01-30 15:36 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-01-30 16:06 | 25 min | AUTO | 🚫 Sin peaje
