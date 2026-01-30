@@ -4311,3 +4311,4 @@
 - 2026-01-30 16:06 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-01-30 16:49 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-01-30 17:23 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-01-30 18:05 | 20 min | AUTO | 🚫 Sin peaje
