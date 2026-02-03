@@ -4330,3 +4330,4 @@
 - 2026-02-03 07:59 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-02-03 08:25 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-03 08:49 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-02-03 08:58 | 24 min | AUTO | 🚫 Sin peaje
