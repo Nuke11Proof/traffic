@@ -4343,3 +4343,4 @@
 - 2026-02-04 08:00 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-04 08:26 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-04 08:51 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-02-04 08:59 | 20 min | AUTO | 🚫 Sin peaje
