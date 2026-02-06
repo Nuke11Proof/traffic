@@ -4371,3 +4371,4 @@
 - 2026-02-06 08:52 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-02-06 09:02 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-02-06 09:39 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-02-06 10:28 | 20 min | AUTO | 🚫 Sin peaje
