@@ -4382,3 +4382,4 @@
 - 2026-02-09 08:59 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-02-09 09:03 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-02-09 10:08 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-02-09 11:16 | 20 min | AUTO | 🚫 Sin peaje
