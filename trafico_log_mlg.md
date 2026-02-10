@@ -4393,3 +4393,4 @@
 - 2026-02-10 11:12 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-10 16:00 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-02-10 17:14 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-02-10 18:30 | 21 min | AUTO | 🚫 Sin peaje
