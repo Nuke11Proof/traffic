@@ -4412,3 +4412,4 @@
 - 2026-02-12 09:06 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-02-12 10:00 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-02-12 11:02 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-02-12 15:49 | 27 min | AUTO | 🚫 Sin peaje
