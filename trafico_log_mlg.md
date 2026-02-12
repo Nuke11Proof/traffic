@@ -4410,3 +4410,4 @@
 - 2026-02-12 08:40 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-02-12 08:59 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-02-12 09:06 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-02-12 10:00 | 24 min | AUTO | 🚫 Sin peaje
