@@ -4425,3 +4425,4 @@
 - 2026-02-13 09:53 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-02-13 10:46 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-13 11:26 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-02-13 15:41 | 46 min | AUTO | 🚫 Sin peaje
