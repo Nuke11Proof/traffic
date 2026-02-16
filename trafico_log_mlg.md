@@ -4433,3 +4433,4 @@
 - 2026-02-16 07:56 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-02-16 08:11 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-02-16 08:47 | 23 min | AUTO | 🚫 Sin peaje
+- 2026-02-16 09:02 | 24 min | AUTO | 🚫 Sin peaje
