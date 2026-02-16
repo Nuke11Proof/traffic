@@ -4430,3 +4430,4 @@
 - 2026-02-13 17:09 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-02-13 18:06 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-02-16 06:57 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-02-16 07:56 | 21 min | AUTO | 🚫 Sin peaje
