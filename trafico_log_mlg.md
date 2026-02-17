@@ -4444,3 +4444,4 @@
 - 2026-02-17 06:49 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-02-17 07:39 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-02-17 08:05 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-02-17 08:35 | 23 min | AUTO | 🚫 Sin peaje
