@@ -4470,3 +4470,4 @@
 - 2026-02-19 08:07 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-02-19 08:36 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-02-19 08:56 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-02-19 09:05 | 25 min | AUTO | 🚫 Sin peaje
