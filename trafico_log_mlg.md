@@ -4491,3 +4491,4 @@
 - 2026-02-20 16:59 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-02-20 17:54 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-02-20 18:36 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-02-23 06:56 | 18 min | AUTO | 🚫 Sin peaje
