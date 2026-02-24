@@ -4508,3 +4508,4 @@
 - 2026-02-24 08:07 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-02-24 08:36 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-24 08:58 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-02-24 09:07 | 20 min | AUTO | 🚫 Sin peaje
