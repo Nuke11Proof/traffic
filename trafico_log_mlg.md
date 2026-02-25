@@ -4524,3 +4524,4 @@
 - 2026-02-25 11:07 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-25 15:51 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-02-25 16:54 | 28 min | AUTO | 🚫 Sin peaje
+- 2026-02-25 18:08 | 20 min | AUTO | 🚫 Sin peaje
