@@ -4630,3 +4630,4 @@
 - 2026-03-09 16:55 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-03-09 17:57 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-03-10 06:37 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-03-10 07:07 | 18 min | AUTO | 🚫 Sin peaje
