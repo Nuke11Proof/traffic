@@ -4652,3 +4652,4 @@
 - 2026-03-11 10:24 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-03-11 11:07 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-03-11 15:49 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-03-11 16:34 | 30 min | AUTO | 🚫 Sin peaje
