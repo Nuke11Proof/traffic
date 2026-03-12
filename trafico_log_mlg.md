@@ -4663,3 +4663,4 @@
 - 2026-03-12 09:00 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-03-12 09:39 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-03-12 10:27 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-03-12 11:09 | 20 min | AUTO | 🚫 Sin peaje
