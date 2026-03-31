@@ -4803,3 +4803,4 @@
 - 2026-03-30 18:12 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-03-30 19:12 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-03-31 08:08 | 20 min | AUTO | 🚫 Sin peaje
+- 2026-03-31 09:23 | 20 min | AUTO | 🚫 Sin peaje
