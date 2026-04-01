@@ -4815,3 +4815,4 @@
 - 2026-04-01 08:19 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-04-01 09:41 | 22 min | AUTO | 🚫 Sin peaje
 - 2026-04-01 09:55 | 23 min | AUTO | 🚫 Sin peaje
+- 2026-04-01 10:47 | 24 min | AUTO | 🚫 Sin peaje
