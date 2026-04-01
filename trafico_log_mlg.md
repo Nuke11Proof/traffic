@@ -4813,3 +4813,4 @@
 - 2026-03-31 18:13 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-03-31 19:15 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-04-01 08:19 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-04-01 09:41 | 22 min | AUTO | 🚫 Sin peaje
