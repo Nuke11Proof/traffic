@@ -4845,3 +4845,4 @@
 - 2026-04-06 09:52 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-04-06 10:04 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-04-06 11:06 | 25 min | AUTO | 🚫 Sin peaje
+- 2026-04-06 12:19 | 27 min | AUTO | 🚫 Sin peaje
