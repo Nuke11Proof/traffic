@@ -4851,3 +4851,4 @@
 - 2026-04-06 18:28 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-04-06 19:26 | 21 min | AUTO | 🚫 Sin peaje
 - 2026-04-07 08:10 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-04-07 09:26 | 26 min | AUTO | 🚫 Sin peaje
