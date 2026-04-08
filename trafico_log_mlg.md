@@ -4863,3 +4863,4 @@
 - 2026-04-08 08:13 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-04-08 09:42 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-04-08 09:51 | 29 min | AUTO | 🚫 Sin peaje
+- 2026-04-08 10:45 | 30 min | AUTO | 🚫 Sin peaje
