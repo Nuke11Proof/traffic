@@ -4901,3 +4901,4 @@
 - 2026-04-14 11:24 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-04-14 12:46 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-04-14 17:14 | 35 min | AUTO | 🚫 Sin peaje
+- 2026-04-14 18:36 | 23 min | AUTO | 🚫 Sin peaje
