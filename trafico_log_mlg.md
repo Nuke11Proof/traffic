@@ -4911,3 +4911,4 @@
 - 2026-04-15 17:05 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-04-15 18:14 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-04-15 19:33 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-04-16 08:25 | 26 min | AUTO | 🚫 Sin peaje
