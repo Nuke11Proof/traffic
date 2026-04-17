@@ -4922,3 +4922,4 @@
 - 2026-04-17 08:26 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-04-17 09:56 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-04-17 10:09 | 26 min | AUTO | 🚫 Sin peaje
+- 2026-04-17 11:41 | 24 min | AUTO | 🚫 Sin peaje
