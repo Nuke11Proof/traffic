@@ -4925,3 +4925,4 @@
 - 2026-04-17 11:41 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-04-17 12:42 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-04-17 16:56 | 46 min | AUTO | 🚫 Sin peaje
+- 2026-04-17 18:05 | 35 min | AUTO | 🚫 Sin peaje
