@@ -4929,3 +4929,4 @@
 - 2026-04-17 19:04 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-04-20 09:07 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-04-20 10:18 | 25 min | AUTO | 🚫 Sin peaje
+- 2026-04-20 11:16 | 22 min | AUTO | 🚫 Sin peaje
