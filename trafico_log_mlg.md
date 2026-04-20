@@ -4930,3 +4930,4 @@
 - 2026-04-20 09:07 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-04-20 10:18 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-04-20 11:16 | 22 min | AUTO | 🚫 Sin peaje
+- 2026-04-20 12:11 | 24 min | AUTO | 🚫 Sin peaje
