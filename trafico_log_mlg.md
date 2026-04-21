@@ -4940,3 +4940,4 @@
 - 2026-04-21 11:48 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-04-21 12:55 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-04-21 15:21 | 27 min | AUTO | 🚫 Sin peaje
+- 2026-04-21 17:14 | 30 min | AUTO | 🚫 Sin peaje
