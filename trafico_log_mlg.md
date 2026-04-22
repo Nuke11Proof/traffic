@@ -4950,3 +4950,4 @@
 - 2026-04-22 12:53 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-04-22 17:15 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-04-22 18:34 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-04-22 19:37 | 19 min | AUTO | 🚫 Sin peaje
