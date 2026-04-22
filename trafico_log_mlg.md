@@ -4943,3 +4943,4 @@
 - 2026-04-21 17:14 | 30 min | AUTO | 🚫 Sin peaje
 - 2026-04-21 18:33 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-04-21 19:37 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-04-22 08:26 | 24 min | AUTO | 🚫 Sin peaje
