@@ -4961,3 +4961,4 @@
 - 2026-04-24 08:55 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-04-24 10:11 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-04-24 10:54 | 25 min | AUTO | 🚫 Sin peaje
+- 2026-04-24 11:55 | 26 min | AUTO | 🚫 Sin peaje
