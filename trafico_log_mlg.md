@@ -4982,3 +4982,4 @@
 - 2026-04-29 11:23 | 30 min | AUTO | 🚫 Sin peaje
 - 2026-04-29 12:26 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-04-29 17:56 | 30 min | AUTO | 🚫 Sin peaje
+- 2026-04-29 19:41 | 19 min | AUTO | 🚫 Sin peaje
