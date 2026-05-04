@@ -4997,3 +4997,4 @@
 - 2026-05-01 18:00 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-05-01 19:09 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-05-04 09:40 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-05-04 10:35 | 26 min | AUTO | 🚫 Sin peaje
