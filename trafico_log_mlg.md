@@ -5092,3 +5092,4 @@
 - 2026-05-28 12:12 | 26 min | AUTO | 🚫 Sin peaje
 - 2026-05-28 19:34 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-05-29 10:34 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-05-29 12:01 | 27 min | AUTO | 🚫 Sin peaje
