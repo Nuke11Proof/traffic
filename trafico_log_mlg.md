@@ -5099,3 +5099,4 @@
 - 2026-06-01 21:20 | 18 min | AUTO | 🚫 Sin peaje
 - 2026-06-02 10:58 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-06-02 12:44 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-06-02 20:05 | 19 min | AUTO | 🚫 Sin peaje
