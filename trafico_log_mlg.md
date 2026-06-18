@@ -5139,3 +5139,4 @@
 - 2026-06-17 13:05 | 25 min | AUTO | 🚫 Sin peaje
 - 2026-06-17 18:54 | 31 min | AUTO | 🚫 Sin peaje
 - 2026-06-17 21:24 | 18 min | AUTO | 🚫 Sin peaje
+- 2026-06-18 11:07 | 24 min | AUTO | 🚫 Sin peaje
