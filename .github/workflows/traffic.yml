@@ -31,13 +31,6 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
 
-      - name: Ejecutar main_mad
-        run: python main_mad.py
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
-
       - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
       - run: git fetch origin main
       - run: |
