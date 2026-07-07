@@ -5201,3 +5201,4 @@
 - 2026-07-07 11:50 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-07-07 14:25 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-07-07 18:32 | 21 min | AUTO | 🚫 Sin peaje
+- 2026-07-07 20:33 | 19 min | AUTO | 🚫 Sin peaje
