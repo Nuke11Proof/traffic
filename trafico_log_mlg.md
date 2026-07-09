@@ -5210,3 +5210,4 @@
 - 2026-07-08 19:48 | 19 min | AUTO | 🚫 Sin peaje
 - 2026-07-09 10:26 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-07-09 11:48 | 29 min | AUTO | 🚫 Sin peaje
+- 2026-07-09 14:22 | 30 min | AUTO | 🚫 Sin peaje
