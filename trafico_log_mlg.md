@@ -5213,3 +5213,4 @@
 - 2026-07-09 14:22 | 30 min | AUTO | 🚫 Sin peaje
 - 2026-07-09 18:27 | 23 min | AUTO | 🚫 Sin peaje
 - 2026-07-09 20:18 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-07-10 10:13 | 23 min | AUTO | 🚫 Sin peaje
