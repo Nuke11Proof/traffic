@@ -5230,3 +5230,4 @@
 - 2026-07-14 17:23 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-07-14 18:43 | 20 min | AUTO | 🚫 Sin peaje
 - 2026-07-14 19:49 | 19 min | AUTO | 🚫 Sin peaje
+- 2026-07-15 09:03 | 21 min | AUTO | 🚫 Sin peaje
