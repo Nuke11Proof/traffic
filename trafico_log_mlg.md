@@ -5268,3 +5268,4 @@
 - 2026-07-22 11:53 | 29 min | AUTO | 🚫 Sin peaje
 - 2026-07-22 12:49 | 27 min | AUTO | 🚫 Sin peaje
 - 2026-07-22 17:42 | 25 min | AUTO | 🚫 Sin peaje
+- 2026-07-22 19:02 | 26 min | AUTO | 🚫 Sin peaje
