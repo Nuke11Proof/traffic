@@ -5309,3 +5309,4 @@
 - 2026-07-31 13:31 | 35 min | AUTO | 🚫 Sin peaje
 - 2026-07-31 18:01 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-07-31 19:48 | 24 min | AUTO | 🚫 Sin peaje
+- 2026-08-03 10:16 | 24 min | AUTO | 🚫 Sin peaje
