@@ -5320,3 +5320,5 @@
 - 2026-08-04 13:10 | 28 min | AUTO | 🚫 Sin peaje
 - 2026-08-04 17:48 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-08-04 18:10 | 32 min | AUTO | 🚫 Sin peaje
+- 2026-08-04 18:13 | 33 min | AUTO | 🚫 Sin peaje | Casa → Marbella
+- 2026-08-04 18:13 | 26 min | AUTO | 🚫 Sin peaje | Marbella → Casa
