@@ -5322,3 +5322,5 @@
 - 2026-08-04 18:10 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-08-04 18:13 | 33 min | AUTO | 🚫 Sin peaje | Casa → Marbella
 - 2026-08-04 18:13 | 26 min | AUTO | 🚫 Sin peaje | Marbella → Casa
+- 2026-08-04 18:16 | 32 min | AUTO | 🚫 Sin peaje | Hotel Barceló Guadalmina → olicia Local Marbella
+- 2026-08-04 18:16 | 27 min | AUTO | 🚫 Sin peaje | olicia Local Marbella → Hotel Barceló Guadalmina
