@@ -102,9 +102,14 @@ class TraficoChecker:
             raise
 
     def send_telegram(self, texto):
-        if ENVIAR_TELEGRAM:
+        """Envia el aviso. Un fallo aqui nunca debe tumbar la medicion."""
+        if not ENVIAR_TELEGRAM:
+            return
+        try:
             url = f"https://api.telegram.org/bot{self.token}/sendMessage"
-            requests.post(url, data={"chat_id": self.chat_id, "text": texto})
+            requests.post(url, data={"chat_id": self.chat_id, "text": texto}, timeout=10)
+        except Exception as e:
+            print(f"[AVISO] No se pudo enviar el Telegram: {e}")
 
     def log(self, minutos, peaje):
         ahora = datetime.now(self.CEST).strftime('%Y-%m-%d %H:%M')
@@ -197,8 +202,9 @@ class TraficoChecker:
             texto += "\n⚠️ Ruta con peaje"
 
         print(texto)
-        self.send_telegram(texto)
+        # El log primero: el dato ya es valido y no debe depender de Telegram
         self.log(minutos, peaje)
+        self.send_telegram(texto)
 
 
 if __name__ == "__main__":
