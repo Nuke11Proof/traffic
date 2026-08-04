@@ -22,7 +22,7 @@ class TraficoChecker:
     LOG_FILE   = "trafico_log_mlg.md"
 
     NOMBRE_CASA     = "Hotel Barceló Guadalmina"
-    NOMBRE_MARBELLA = "olicia Local Marbella"
+    NOMBRE_MARBELLA = "Policía Local Marbella"
 
     # timezone-aware object for Europe/Madrid that handles DST transitions
     if _ZoneInfo:
@@ -111,19 +111,23 @@ class TraficoChecker:
         nivel = "AUTO"
         toll  = "⚠️ PEAJE" if peaje else "🚫 Sin peaje"
         with open(self.LOG_FILE, "a", encoding="utf-8") as f:
-            f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll} | {self.sentido_str}\n")
+            f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll} | {self.sentido} | {self.sentido_str}\n")
 
     def _linea_relevante(self, linea, parts):
         """Decide si una línea del log cuenta para el sentido actual.
 
-        Las líneas antiguas (anteriores a agosto 2026) no llevan campo de
-        sentido y corresponden todas al trayecto de ida. Se aprovechan como
-        histórico de la ida para no perder un año de datos.
+        Formatos posibles, de más antiguo a más reciente:
+          - 4 campos: sin sentido -> histórico de la ida (anterior a ago 2026).
+          - 5 campos: solo etiqueta legible (transición) -> se compara texto.
+          - 6+ campos: clave estable "ida"/"vuelta" -> comparación exacta,
+            inmune a que se renombren las etiquetas legibles más adelante.
         """
-        if self.sentido_str in linea:
-            return True
-        if self.sentido == "ida" and len(parts) == 4:
-            return True
+        if len(parts) >= 6:
+            return parts[-2].strip() == self.sentido
+        if len(parts) == 5:
+            return parts[-1].strip() == self.sentido_str
+        if len(parts) == 4:
+            return self.sentido == "ida"
         return False
 
     def media_historica_dia(self):
