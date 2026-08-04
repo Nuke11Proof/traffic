@@ -5318,3 +5318,4 @@
 - 2026-08-04 10:44 | 24 min | AUTO | 🚫 Sin peaje
 - 2026-08-04 12:06 | 32 min | AUTO | 🚫 Sin peaje
 - 2026-08-04 13:10 | 28 min | AUTO | 🚫 Sin peaje
+- 2026-08-04 17:48 | 32 min | AUTO | 🚫 Sin peaje
