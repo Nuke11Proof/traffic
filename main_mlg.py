@@ -21,8 +21,8 @@ class TraficoChecker:
     MARBELLA   = (36.5088687, -4.8669464)   # Policia Local Marbella
     LOG_FILE   = "trafico_log_mlg.md"
 
-    NOMBRE_CASA     = "Casa"
-    NOMBRE_MARBELLA = "Marbella"
+    NOMBRE_CASA     = "Hotel Barceló Guadalmina"
+    NOMBRE_MARBELLA = "olicia Local Marbella"
 
     # timezone-aware object for Europe/Madrid that handles DST transitions
     if _ZoneInfo:
