@@ -12,14 +12,18 @@ try:
 except Exception:
     _ZoneInfo = None
 
-# Ejecutar solo hasta el 12 de diciembre incluido para enviar Telegram
-#ENVIAR_TELEGRAM = datetime.now().date() <= datetime(2025, 12, 31).date()
 ENVIAR_TELEGRAM = True
 
+
 class TraficoChecker:
-    ORIGEN     = (36.4835640, -5.0065981) # Hotel Barceló Guadalmina
-    DESTINO    = (36.5088687, -4.8669464) # Policia Local Marbella
-    LOG_FILE   = "trafico_log_mlg.md" 
+    # ---- RELLENA AQUÍ LAS COORDENADAS DE TU CASA ----
+    CASA       = (36.4835640, -5.0065981)   # <-- sustituir por tu casa
+    MARBELLA   = (36.5088687, -4.8669464)   # Policia Local Marbella
+    LOG_FILE   = "trafico_log_mlg.md"
+
+    NOMBRE_CASA     = "Casa"
+    NOMBRE_MARBELLA = "Marbella"
+
     # timezone-aware object for Europe/Madrid that handles DST transitions
     if _ZoneInfo:
         CEST = _ZoneInfo("Europe/Madrid")
@@ -31,9 +35,18 @@ class TraficoChecker:
             # Last resort: fixed CET offset (UTC+1). This will NOT handle DST.
             CEST = timezone(timedelta(hours=1))
 
-    def __init__(self):
+    def __init__(self, sentido="ida"):
         self.token, self.chat_id = self.load_credentials()
         self.api_key = self.load_api_key()
+        self.sentido = sentido
+        if sentido == "ida":
+            self.punto_inicio = self.CASA
+            self.punto_fin = self.MARBELLA
+            self.sentido_str = f"{self.NOMBRE_CASA} → {self.NOMBRE_MARBELLA}"
+        else:
+            self.punto_inicio = self.MARBELLA
+            self.punto_fin = self.CASA
+            self.sentido_str = f"{self.NOMBRE_MARBELLA} → {self.NOMBRE_CASA}"
 
     def load_api_key(self):
         cfg = ConfigParser()
@@ -53,11 +66,11 @@ class TraficoChecker:
             token = os.getenv("TELEGRAM_TOKEN")
             chat  = os.getenv("TELEGRAM_CHAT_ID")
         return token, chat
-    
+
     def obtener_duracion(self):
         url = (
             f"https://api.tomtom.com/routing/1/calculateRoute/"
-            f"{self.ORIGEN[0]},{self.ORIGEN[1]}:{self.DESTINO[0]},{self.DESTINO[1]}/json"
+            f"{self.punto_inicio[0]},{self.punto_inicio[1]}:{self.punto_fin[0]},{self.punto_fin[1]}/json"
         )
         params = {
             'key': self.api_key,
@@ -98,21 +111,34 @@ class TraficoChecker:
         nivel = "AUTO"
         toll  = "⚠️ PEAJE" if peaje else "🚫 Sin peaje"
         with open(self.LOG_FILE, "a", encoding="utf-8") as f:
-            f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll}\n")
+            f.write(f"- {ahora} | {minutos:.0f} min | {nivel} | {toll} | {self.sentido_str}\n")
+
+    def _linea_relevante(self, linea, parts):
+        """Decide si una línea del log cuenta para el sentido actual.
+
+        Las líneas antiguas (anteriores a agosto 2026) no llevan campo de
+        sentido y corresponden todas al trayecto de ida. Se aprovechan como
+        histórico de la ida para no perder un año de datos.
+        """
+        if self.sentido_str in linea:
+            return True
+        if self.sentido == "ida" and len(parts) == 4:
+            return True
+        return False
 
     def media_historica_dia(self):
-        """Devuelve la media histórica de minutos para el día de la semana."""
+        """Devuelve la media histórica de minutos para el día de la semana y sentido actual."""
         if not os.path.exists(self.LOG_FILE):
             return None
-        from datetime import datetime
         minutos = []
         hoy = datetime.now(self.CEST)
         dia_semana = hoy.strftime("%A")
         with open(self.LOG_FILE, encoding="utf-8") as f:
             for linea in f:
-                # - 2025-08-04 06:58 | 26 min | ... | ... 
                 parts = linea.strip().split("|")
                 if len(parts) < 2:
+                    continue
+                if not self._linea_relevante(linea, parts):
                     continue
                 fecha_str = parts[0].replace("-", "").strip()[1:].strip()
                 try:
@@ -162,15 +188,19 @@ class TraficoChecker:
         media = self.media_historica_dia()
         clasificacion = self.clasifica_trafico(minutos, media)
 
-        trayecto = "Hotel Barceló Guadalmina → Policia Local Marbella"
-        texto = f"{trayecto}\n{clasificacion} ({minutos} min) → ETA {eta}"
+        texto = f"{self.sentido_str}\n{clasificacion} ({minutos} min) → ETA {eta}"
         if peaje:
             texto += "\n⚠️ Ruta con peaje"
-        
+
         print(texto)
         self.send_telegram(texto)
         self.log(minutos, peaje)
 
+
 if __name__ == "__main__":
-    checker = TraficoChecker()
-    checker.run()
+    for sentido in ("ida", "vuelta"):
+        try:
+            TraficoChecker(sentido=sentido).run()
+        except Exception as e:
+            # Un fallo en un sentido no debe impedir que se registre el otro
+            print(f"[ERROR] Sentido '{sentido}' fallido: {e}")
