@@ -1,0 +1,52 @@
+name: Verificar tráfico
+
+on:
+  schedule:
+  # Málaga: 08:00–11:55 CEST (cada 5 min) — desplazado +1h
+  - cron: '*/5 6-9 * * 1-5'
+  # Málaga: 16:00–18:55 CEST (cada 5 min) — desplazado +1h
+  - cron: '*/5 14-16 * * 1-5'
+  # Madrid: 07:00–09:59 CEST (cada 5 min) — desplazado +1h
+  - cron: '*/5 5-7 * * 1-5'
+  # Madrid: 16:00–18:59 CEST (cada 5 min) — desplazado +1h
+  - cron: '*/5 14-16 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  trafico:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with: 
+          python-version: '3.11'
+
+      - run: pip install requests
+
+      - name: Ejecutar main_mlg
+        run: python main_mlg.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
+
+      - name: Ejecutar main_mad
+        run: python main_mad.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TOMTOM_TOKEN: ${{ secrets.TOMTOM_TOKEN }}
+
+      - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+      - run: git fetch origin main
+      - run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          [ -f trafico_log_mlg.md ] && git add trafico_log_mlg.md
+          [ -f trafico_log_mad.md ] && git add trafico_log_mad.md
+          git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
