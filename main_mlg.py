@@ -19,10 +19,26 @@ class TraficoChecker:
     # ---- RELLENA AQUÍ LAS COORDENADAS DE TU CASA ----
     CASA       = (36.4835640, -5.0065981)   # <-- sustituir por tu casa
     MARBELLA   = (36.5088687, -4.8669464)   # Policia Local Marbella
-    LOG_FILE   = "trafico_log_mlg.md"
+    ROSALEDA   = (36.734035, -4.426632)     # Estadio La Rosaleda, Málaga
 
     NOMBRE_CASA     = "Hotel Barceló Guadalmina"
     NOMBRE_MARBELLA = "Policía Local Marbella"
+    NOMBRE_ROSALEDA = "Estadio La Rosaleda"
+
+    # Cada ruta tiene su propio log para no mezclar históricos ni romper
+    # el análisis ya existente sobre trafico_log_mlg.md.
+    RUTAS = {
+        "marbella": {
+            "origen": CASA, "destino": MARBELLA,
+            "nombre_origen": NOMBRE_CASA, "nombre_destino": NOMBRE_MARBELLA,
+            "log_file": "trafico_log_mlg.md",
+        },
+        "rosaleda": {
+            "origen": CASA, "destino": ROSALEDA,
+            "nombre_origen": NOMBRE_CASA, "nombre_destino": NOMBRE_ROSALEDA,
+            "log_file": "trafico_log_rosaleda.md",
+        },
+    }
 
     # timezone-aware object for Europe/Madrid that handles DST transitions
     if _ZoneInfo:
@@ -35,18 +51,21 @@ class TraficoChecker:
             # Last resort: fixed CET offset (UTC+1). This will NOT handle DST.
             CEST = timezone(timedelta(hours=1))
 
-    def __init__(self, sentido="ida"):
+    def __init__(self, ruta="marbella", sentido="ida"):
         self.token, self.chat_id = self.load_credentials()
         self.api_key = self.load_api_key()
+        self.ruta = ruta
         self.sentido = sentido
+        info = self.RUTAS[ruta]
+        self.LOG_FILE = info["log_file"]
         if sentido == "ida":
-            self.punto_inicio = self.CASA
-            self.punto_fin = self.MARBELLA
-            self.sentido_str = f"{self.NOMBRE_CASA} → {self.NOMBRE_MARBELLA}"
+            self.punto_inicio = info["origen"]
+            self.punto_fin = info["destino"]
+            self.sentido_str = f"{info['nombre_origen']} → {info['nombre_destino']}"
         else:
-            self.punto_inicio = self.MARBELLA
-            self.punto_fin = self.CASA
-            self.sentido_str = f"{self.NOMBRE_MARBELLA} → {self.NOMBRE_CASA}"
+            self.punto_inicio = info["destino"]
+            self.punto_fin = info["origen"]
+            self.sentido_str = f"{info['nombre_destino']} → {info['nombre_origen']}"
 
     def load_api_key(self):
         cfg = ConfigParser()
@@ -208,9 +227,10 @@ class TraficoChecker:
 
 
 if __name__ == "__main__":
-    for sentido in ("ida", "vuelta"):
-        try:
-            TraficoChecker(sentido=sentido).run()
-        except Exception as e:
-            # Un fallo en un sentido no debe impedir que se registre el otro
-            print(f"[ERROR] Sentido '{sentido}' fallido: {e}")
+    for ruta in TraficoChecker.RUTAS:
+        for sentido in ("ida", "vuelta"):
+            try:
+                TraficoChecker(ruta=ruta, sentido=sentido).run()
+            except Exception as e:
+                # Un fallo en una ruta/sentido no debe impedir el resto
+                print(f"[ERROR] Ruta '{ruta}' sentido '{sentido}' fallido: {e}")
