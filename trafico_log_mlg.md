@@ -5733,3 +5733,5 @@
 - 2026-08-11 13:30 | 21 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
 - 2026-08-11 13:45 | 28 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Policía Local Marbella
 - 2026-08-11 13:45 | 23 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
+- 2026-08-11 14:01 | 27 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Policía Local Marbella
+- 2026-08-11 14:01 | 23 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
