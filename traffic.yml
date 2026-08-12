@@ -33,6 +33,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add trafico_log_mlg.md trafico_log_rosaleda.md
+          git add trafico_log_mlg.md trafico_log_rosaleda.md trafico_log_trocadero.md
           git commit -m "🔁 Registro tráfico actualizado" || echo "Sin cambios"
           git push origin main

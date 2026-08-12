@@ -20,10 +20,12 @@ class TraficoChecker:
     CASA       = (36.4835640, -5.0065981)   # <-- sustituir por tu casa
     MARBELLA   = (36.5088687, -4.8669464)   # Policia Local Marbella
     ROSALEDA   = (36.734035, -4.426632)     # Estadio La Rosaleda, Málaga
+    TROCADERO  = (36.5806082, -4.5572451)   # Trocadero Benalmádena
 
-    NOMBRE_CASA     = "Hotel Barceló Guadalmina"
-    NOMBRE_MARBELLA = "Policía Local Marbella"
-    NOMBRE_ROSALEDA = "Estadio La Rosaleda"
+    NOMBRE_CASA      = "Hotel Barceló Guadalmina"
+    NOMBRE_MARBELLA  = "Policía Local Marbella"
+    NOMBRE_ROSALEDA  = "Estadio La Rosaleda"
+    NOMBRE_TROCADERO = "Trocadero Benalmádena"
 
     # Cada ruta tiene su propio log para no mezclar históricos ni romper
     # el análisis ya existente sobre trafico_log_mlg.md.
@@ -37,6 +39,11 @@ class TraficoChecker:
             "origen": CASA, "destino": ROSALEDA,
             "nombre_origen": NOMBRE_CASA, "nombre_destino": NOMBRE_ROSALEDA,
             "log_file": "trafico_log_rosaleda.md",
+        },
+        "trocadero": {
+            "origen": CASA, "destino": TROCADERO,
+            "nombre_origen": NOMBRE_CASA, "nombre_destino": NOMBRE_TROCADERO,
+            "log_file": "trafico_log_trocadero.md",
         },
     }
 
