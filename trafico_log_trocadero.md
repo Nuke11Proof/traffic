@@ -242,3 +242,5 @@
 - 2026-08-13 23:31 | 44 min | AUTO | 🚫 Sin peaje | vuelta | Trocadero Benalmádena → Hotel Barceló Guadalmina
 - 2026-08-13 23:45 | 48 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Trocadero Benalmádena
 - 2026-08-13 23:45 | 44 min | AUTO | 🚫 Sin peaje | vuelta | Trocadero Benalmádena → Hotel Barceló Guadalmina
+- 2026-08-14 08:00 | 48 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Trocadero Benalmádena
+- 2026-08-14 08:00 | 47 min | AUTO | 🚫 Sin peaje | vuelta | Trocadero Benalmádena → Hotel Barceló Guadalmina
