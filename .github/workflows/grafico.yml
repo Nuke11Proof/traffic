@@ -1,0 +1,32 @@
+name: Gráfico diario de tráfico
+
+on:
+  schedule:
+    # 19:00 UTC = 21:00 en verano / 20:00 en invierno (Europe/Madrid).
+    # Siempre después de la última medida del día y dentro del mismo día natural.
+    - cron: "0 19 * * *"
+  repository_dispatch:
+    types: [grafico]
+  workflow_dispatch:
+    inputs:
+      fecha:
+        description: "Fecha a graficar (YYYY-MM-DD). Vacío = hoy."
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  grafico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: python3 -m pip install --quiet requests matplotlib
+
+      - name: Enviar gráfico
+        run: python3 grafico_diario.py ${{ inputs.fecha && format('--fecha {0}', inputs.fecha) || '' }}
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
