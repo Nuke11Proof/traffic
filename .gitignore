@@ -1,6 +1,7 @@
 config.ini
 
-# Gráficos generados por los notebooks (regenerables)
-grafico_*.png
+# Gráficos generados (notebooks y pruebas de grafico_diario.py)
+*.png
 
+.venv/
 __pycache__/
