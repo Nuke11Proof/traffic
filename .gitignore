@@ -1,5 +1,6 @@
 config.ini
-grafico_dias_semana_mlg.png
-grafico_tramos_15min_mlg.png
-traffic.yml
+
+# Gráficos generados por los notebooks (regenerables)
+grafico_*.png
+
 __pycache__/
