@@ -1,0 +1,27 @@
+name: Gráfico mensual de tráfico
+
+on:
+  schedule:
+    # Día 1 de cada mes, 19:00 UTC (misma hora que el resumen diario).
+    - cron: "0 19 1 * *"
+  repository_dispatch:
+    types: [grafico_mensual]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  grafico_mensual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: python3 -m pip install --quiet requests matplotlib
+
+      - name: Enviar gráfico mensual
+        run: python3 grafico_mensual.py
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
