@@ -17,7 +17,7 @@ ENVIAR_TELEGRAM = True
 
 class TraficoChecker:
     # ---- RELLENA AQUÍ LAS COORDENADAS DE TU CASA ----
-    CASA       = (36.4835640, -5.0065981)   # <-- sustituir por tu casa
+    CASA       = (36.4835640, -5.0065981)   # Hotel Barceló Marbella (Guadalmina)
     MARBELLA   = (36.5088687, -4.8669464)   # Policia Local Marbella
     ROSALEDA   = (36.734035, -4.426632)     # Estadio La Rosaleda, Málaga
     TROCADERO  = (36.5806082, -4.5572451)   # Trocadero Benalmádena
