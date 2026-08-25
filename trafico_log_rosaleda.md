@@ -1912,3 +1912,5 @@
 - 2026-08-25 21:50 | 55 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
 - 2026-08-25 22:00 | 62 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Estadio La Rosaleda
 - 2026-08-25 22:00 | 56 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
+- 2026-08-25 22:15 | 62 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Estadio La Rosaleda
+- 2026-08-25 22:15 | 56 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
