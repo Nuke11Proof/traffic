@@ -143,6 +143,7 @@ def enviar_foto(token, chat_id, imagen, caption):
         timeout=30,
     )
     r.raise_for_status()
+    return r.json()["result"]["message_id"]
 
 
 def enviar_texto(token, chat_id, texto):
@@ -164,6 +165,19 @@ def fijar_mensaje(token, chat_id, message_id):
         },
         timeout=10,
     )
+    r.raise_for_status()
+    return r.json().get("ok") is True
+
+
+def desfijar_resumen_anterior(token, chat_id):
+    """Desfija el mensaje fijado mas reciente antes de publicar el nuevo resumen."""
+    url = f"https://api.telegram.org/bot{token}/unpinChatMessage"
+    r = requests.post(url, data={"chat_id": chat_id}, timeout=10)
+    if r.status_code == 400:
+        # El primer dia puede no existir ningun mensaje fijado todavia.
+        descripcion = r.json().get("description", "").lower()
+        if "message to unpin not found" in descripcion:
+            return False
     r.raise_for_status()
     return r.json().get("ok") is True
 
@@ -230,8 +244,12 @@ def main():
         print("[ERROR] Faltan TELEGRAM_TOKEN / TELEGRAM_CHAT_ID", file=sys.stderr)
         return 1
 
-    enviar_foto(token, chat_id, imagen, resumen)
-    print("\nEnviado a Telegram.")
+    desfijar_resumen_anterior(token, chat_id)
+    message_id = enviar_foto(token, chat_id, imagen, resumen)
+    if not fijar_mensaje(token, chat_id, message_id):
+        print("[ERROR] Telegram no confirmó el fijado del resumen", file=sys.stderr)
+        return 1
+    print("\nEnviado y fijado en Telegram.")
     return 0
 
 
