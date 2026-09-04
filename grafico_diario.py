@@ -8,6 +8,7 @@ Uso:
     python3 grafico_diario.py                    # día de hoy, envía a Telegram
     python3 grafico_diario.py --fecha 2026-08-14 # otro día
     python3 grafico_diario.py --guardar out.png --no-telegram   # prueba local
+    python3 grafico_diario.py --probar-fijado    # comprueba el permiso en Telegram
 """
 
 import argparse
@@ -146,7 +147,25 @@ def enviar_foto(token, chat_id, imagen, caption):
 
 def enviar_texto(token, chat_id, texto):
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    requests.post(url, data={"chat_id": chat_id, "text": texto}, timeout=10)
+    r = requests.post(url, data={"chat_id": chat_id, "text": texto}, timeout=10)
+    r.raise_for_status()
+    return r.json()["result"]["message_id"]
+
+
+def fijar_mensaje(token, chat_id, message_id):
+    """Fija un mensaje sin generar otra notificacion en Telegram."""
+    url = f"https://api.telegram.org/bot{token}/pinChatMessage"
+    r = requests.post(
+        url,
+        data={
+            "chat_id": chat_id,
+            "message_id": message_id,
+            "disable_notification": "true",
+        },
+        timeout=10,
+    )
+    r.raise_for_status()
+    return r.json().get("ok") is True
 
 
 def main():
@@ -154,7 +173,28 @@ def main():
     p.add_argument("--fecha", help="YYYY-MM-DD (por defecto, hoy en Europe/Madrid)")
     p.add_argument("--guardar", help="Guarda además el PNG en esta ruta")
     p.add_argument("--no-telegram", action="store_true", help="No envía nada")
+    p.add_argument(
+        "--probar-fijado",
+        action="store_true",
+        help="Envía y fija un mensaje de prueba, sin generar el resumen",
+    )
     args = p.parse_args()
+
+    token, chat_id = load_credentials()
+    if args.probar_fijado:
+        if not token or not chat_id:
+            print("[ERROR] Faltan TELEGRAM_TOKEN / TELEGRAM_CHAT_ID", file=sys.stderr)
+            return 1
+        message_id = enviar_texto(
+            token,
+            chat_id,
+            "🧪 Prueba de fijado del resumen diario de tráfico",
+        )
+        if not fijar_mensaje(token, chat_id, message_id):
+            print("[ERROR] Telegram no confirmó el fijado", file=sys.stderr)
+            return 1
+        print("[OK] Telegram permitió fijar el mensaje de prueba")
+        return 0
 
     if args.fecha:
         fecha = datetime.strptime(args.fecha, "%Y-%m-%d")
@@ -166,8 +206,6 @@ def main():
         datos = leer_log(info["log_file"], fecha)
         if datos["ida"] or datos["vuelta"]:
             por_ruta[ruta] = datos
-
-    token, chat_id = load_credentials()
 
     if not por_ruta:
         aviso = f"⚠️ Sin medidas de tráfico el {fecha.strftime('%d/%m/%Y')}"
