@@ -214,7 +214,7 @@ class TraficoChecker:
         else:
             return "🚨 Tráfico alto"
 
-    def run(self):
+    def run(self, enviar_telegram=True):
         minutos_float, peaje = self.obtener_duracion()
         minutos = math.ceil(minutos_float)
         ahora = datetime.now(timezone.utc).astimezone(self.CEST)
@@ -230,14 +230,39 @@ class TraficoChecker:
         print(texto)
         # El log primero: el dato ya es valido y no debe depender de Telegram
         self.log(minutos, peaje)
-        self.send_telegram(texto)
+        if enviar_telegram:
+            self.send_telegram(texto)
+        return texto
 
 
-if __name__ == "__main__":
-    for ruta in TraficoChecker.RUTAS:
+def comprobar_rutas_agrupadas():
+    """Comprueba todas las rutas y envia un unico resumen agrupado por ubicacion."""
+    grupos = []
+    remitente = None
+
+    for ruta, info in TraficoChecker.RUTAS.items():
+        trayectos = []
         for sentido in ("ida", "vuelta"):
             try:
-                TraficoChecker(ruta=ruta, sentido=sentido).run()
+                checker = TraficoChecker(ruta=ruta, sentido=sentido)
+                if remitente is None:
+                    remitente = checker
+                trayectos.append(checker.run(enviar_telegram=False))
             except Exception as e:
                 # Un fallo en una ruta/sentido no debe impedir el resto
                 print(f"[ERROR] Ruta '{ruta}' sentido '{sentido}' fallido: {e}")
+
+        if trayectos:
+            encabezado = f"📍 {info['nombre_destino']}"
+            grupos.append(f"{encabezado}\n\n" + "\n\n".join(trayectos))
+
+    if grupos and remitente is not None:
+        mensaje = "🚦 Estado del tráfico\n\n" + "\n\n━━━━━━━━━━\n\n".join(grupos)
+        remitente.send_telegram(mensaje)
+        return mensaje
+
+    return None
+
+
+if __name__ == "__main__":
+    comprobar_rutas_agrupadas()
