@@ -1,5 +1,6 @@
 import os
 import math
+import time
 import warnings
 from datetime import datetime, timedelta, timezone
 from configparser import ConfigParser
@@ -108,8 +109,21 @@ class TraficoChecker:
         }
 
         try:
-            r = requests.get(url, params=params, timeout=10)
-            r.raise_for_status()
+            for intento in range(3):
+                try:
+                    r = requests.get(url, params=params, timeout=10)
+                    r.raise_for_status()
+                    break
+                except requests.exceptions.RequestException as e:
+                    estado = e.response.status_code if e.response is not None else None
+                    temporal = isinstance(e, (requests.exceptions.Timeout,
+                                              requests.exceptions.ConnectionError)) or estado in (
+                        429, 500, 502, 503, 504
+                    )
+                    if not temporal or intento == 2:
+                        raise
+                    print(f"[AVISO] Consulta temporalmente fallida ({self.ruta}/{self.sentido}); reintentando.")
+                    time.sleep(2 ** intento)
             data = r.json()
             summary = data['routes'][0]['summary']
             minutos = summary['travelTimeInSeconds'] / 60
@@ -251,6 +265,10 @@ def comprobar_rutas_agrupadas():
             except Exception as e:
                 # Un fallo en una ruta/sentido no debe impedir el resto
                 print(f"[ERROR] Ruta '{ruta}' sentido '{sentido}' fallido: {e}")
+                origen, destino = info['nombre_origen'], info['nombre_destino']
+                if sentido == "vuelta":
+                    origen, destino = destino, origen
+                trayectos.append(f"{origen} → {destino}\n⚠️ Datos no disponibles en esta consulta")
 
         if trayectos:
             encabezado = f"📍 {info['nombre_destino']}"
