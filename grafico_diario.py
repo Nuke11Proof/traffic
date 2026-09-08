@@ -17,7 +17,7 @@ import os
 import re
 import sys
 from configparser import ConfigParser
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import matplotlib
 matplotlib.use("Agg")  # sin ventana: imprescindible en GitHub Actions
@@ -25,6 +25,7 @@ import matplotlib.pyplot as plt
 import requests
 
 from main_mlg import TraficoChecker
+from resumen_trafico import resumir_sentido, comparar_historico
 
 CEST = TraficoChecker.CEST
 RUTAS = TraficoChecker.RUTAS
@@ -116,22 +117,24 @@ def construir_grafico(por_ruta, fecha):
     return buf
 
 
-def construir_resumen(por_ruta, fecha):
-    lineas = [f"📊 Resumen del {fecha.strftime('%d/%m/%Y')}"]
+def construir_resumen(por_ruta, fecha, historico=None):
+    lineas = [f"🚗 Qué nos dejó el {fecha.strftime('%d/%m/%Y')}"]
     for ruta, datos in por_ruta.items():
         lineas.append("")
         lineas.append(RUTAS[ruta]["nombre_destino"])
         for sentido in ("ida", "vuelta"):
-            minutos = [m for _, m in datos[sentido]]
-            if not minutos:
-                continue
-            peor_hora, peor = max(datos[sentido], key=lambda p: p[1])
-            lineas.append(
-                f"  {sentido}: {min(minutos):.0f}–{max(minutos):.0f} min "
-                f"(media {sum(minutos) / len(minutos):.0f}), "
-                f"peor a las {peor_hora.strftime('%H:%M')} con {peor:.0f}"
-            )
+            lineas.append(f"  {sentido.capitalize()}: {resumir_sentido(datos[sentido])}")
+        lineas.append(comparar_historico(datos, (historico or {}).get(ruta, {}), fecha))
+    lineas.extend(["", "🕒 Tiempos observados, no una previsión. Menos trayecto no implica llegar antes."])
     return "\n".join(lineas)
+
+
+def leer_historico(path, fecha):
+    """Solo los seis días equivalentes anteriores; nunca el día actual ni futuros."""
+    return {
+        (fecha - timedelta(weeks=n)).date(): leer_log(path, fecha - timedelta(weeks=n))
+        for n in range(1, 7)
+    }
 
 
 def enviar_foto(token, chat_id, imagen, caption):
@@ -229,7 +232,8 @@ def main():
         return 0
 
     imagen = construir_grafico(por_ruta, fecha)
-    resumen = construir_resumen(por_ruta, fecha)
+    historico = {ruta: leer_historico(RUTAS[ruta]["log_file"], fecha) for ruta in por_ruta}
+    resumen = construir_resumen(por_ruta, fecha, historico)
     print(resumen)
 
     if args.guardar:
@@ -244,8 +248,9 @@ def main():
         print("[ERROR] Faltan TELEGRAM_TOKEN / TELEGRAM_CHAT_ID", file=sys.stderr)
         return 1
 
+    enviar_foto(token, chat_id, imagen, f"📊 Detalle del {fecha.strftime('%d/%m/%Y')}")
+    message_id = enviar_texto(token, chat_id, resumen)
     desfijar_resumen_anterior(token, chat_id)
-    message_id = enviar_foto(token, chat_id, imagen, resumen)
     if not fijar_mensaje(token, chat_id, message_id):
         print("[ERROR] Telegram no confirmó el fijado del resumen", file=sys.stderr)
         return 1
