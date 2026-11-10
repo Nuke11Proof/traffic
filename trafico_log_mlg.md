@@ -17361,3 +17361,5 @@
 - 2026-11-10 18:01 | 24 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
 - 2026-11-10 18:15 | 24 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Policía Local Marbella
 - 2026-11-10 18:15 | 24 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
+- 2026-11-10 18:30 | 27 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Policía Local Marbella
+- 2026-11-10 18:30 | 25 min | AUTO | 🚫 Sin peaje | vuelta | Policía Local Marbella → Hotel Barceló Guadalmina
