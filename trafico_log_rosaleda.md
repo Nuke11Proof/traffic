@@ -12658,3 +12658,5 @@
 - 2026-11-18 10:30 | 59 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
 - 2026-11-18 10:45 | 65 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Estadio La Rosaleda
 - 2026-11-18 10:45 | 60 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
+- 2026-11-18 11:01 | 64 min | AUTO | 🚫 Sin peaje | ida | Hotel Barceló Guadalmina → Estadio La Rosaleda
+- 2026-11-18 11:01 | 60 min | AUTO | 🚫 Sin peaje | vuelta | Estadio La Rosaleda → Hotel Barceló Guadalmina
